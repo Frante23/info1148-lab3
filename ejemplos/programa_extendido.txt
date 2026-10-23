@@ -1,0 +1,10 @@
+Begin
+Programa ejemplo_tipos
+entero contador #
+real temperatura #
+contador = 0 #
+temperatura = 1.345 #
+contador = contador + 1 #
+salida contador #
+salida temperatura #
+End

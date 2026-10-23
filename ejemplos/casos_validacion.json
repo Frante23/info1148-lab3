@@ -1,0 +1,740 @@
+[
+  {
+    "id": "P4_1",
+    "grupo": "pregunta_4",
+    "fuente": "x = 10 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Asignación simple con número y terminador."
+  },
+  {
+    "id": "P4_2",
+    "grupo": "pregunta_4",
+    "fuente": "z = x + y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Asignación con dos operandos y operador infijo."
+  },
+  {
+    "id": "P4_3",
+    "grupo": "pregunta_4",
+    "fuente": "salida z #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Salida de un identificador seguida de #."
+  },
+  {
+    "id": "P4_4",
+    "grupo": "pregunta_4",
+    "fuente": "x 10 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": "Falta = entre el destino y el operando."
+  },
+  {
+    "id": "P4_5",
+    "grupo": "pregunta_4",
+    "fuente": "z = + x y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": "El operador debe ir entre los operandos, no antes del primero."
+  },
+  {
+    "id": "P4_6",
+    "grupo": "pregunta_4",
+    "fuente": "salida #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": "Falta el identificador después de salida."
+  },
+  {
+    "id": "P4_7",
+    "grupo": "pregunta_4",
+    "fuente": "x = 20",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": "Falta # al final de la instrucción."
+  },
+  {
+    "id": "P4_8",
+    "grupo": "pregunta_4",
+    "fuente": "Begin\nPrograma prueba\nx = 5 #\nsalida x #\nEnd",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Programa con nombre, dos instrucciones y cierre End. Las barras de la pauta se interpretan como saltos de línea."
+  },
+  {
+    "id": "P3_1",
+    "grupo": "pregunta_3",
+    "fuente": "x = 20 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "La forma corresponde a una alternativa de <instruccion>."
+  },
+  {
+    "id": "P3_2",
+    "grupo": "pregunta_3",
+    "fuente": "z = x * y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "La forma corresponde a una alternativa de <instruccion>."
+  },
+  {
+    "id": "P3_3",
+    "grupo": "pregunta_3",
+    "fuente": "salida temporal #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "La forma corresponde a una alternativa de <instruccion>."
+  },
+  {
+    "id": "REF",
+    "grupo": "referencia",
+    "fuente": "Begin\nPrograma operativo_01_02\n\nx = 1.345 #\ny = 20 #\n\n/* operaciones y salidas */\n\nz = x + y #\nz2 = x + y #\nh = z - x #\nh2 = z - x #\nk = h * y #\nt = k / z #\nm = k % 10 #\n\nsalida z #\nsalida h #\nsalida k #\nsalida t #\nsalida m #\n\ntemporal = 0 #\ntemporal = x #\nx = y #\ny = temporal #\n\nsalida x #\nsalida y #\n\nEnd\n",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "20 instrucciones: 13 asignaciones y 7 salidas."
+  },
+  {
+    "id": "EXT_V",
+    "grupo": "extension",
+    "fuente": "entero contador #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": true,
+    "justificacion": "Tipo reservado, identificador y terminador."
+  },
+  {
+    "id": "EXT_I",
+    "grupo": "extension",
+    "fuente": "entero #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": "Falta el identificador entre el tipo y #."
+  },
+  {
+    "id": "EXT_PROG",
+    "grupo": "extension",
+    "fuente": "Begin\nPrograma ejemplo_tipos\nentero contador #\nreal temperatura #\ncontador = 0 #\ntemperatura = 1.345 #\ncontador = contador + 1 #\nsalida contador #\nsalida temperatura #\nEnd\n",
+    "inicio": "S",
+    "extendida": true,
+    "esperado": true,
+    "justificacion": "Programa completo con declaraciones y operaciones previas."
+  },
+  {
+    "id": "ID_LARGO",
+    "grupo": "adicional",
+    "fuente": "operativo_01_02 = z2 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "ID_MAYUSCULA",
+    "grupo": "adicional",
+    "fuente": "Variable_A2 = temporal #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "ID_GUION_INICIAL",
+    "grupo": "adicional",
+    "fuente": "_x = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "ID_DIGITO_INICIAL",
+    "grupo": "adicional",
+    "fuente": "2x = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "RESERVADA_ID",
+    "grupo": "adicional",
+    "fuente": "salida = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "ID_PREFIJO_RESERVADO",
+    "grupo": "adicional",
+    "fuente": "salida2 = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_CERO",
+    "grupo": "adicional",
+    "fuente": "x = 0 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_REAL",
+    "grupo": "adicional",
+    "fuente": "x = 1.345 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_CEROS",
+    "grupo": "adicional",
+    "fuente": "x = 00.50 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_NEGATIVO",
+    "grupo": "adicional",
+    "fuente": "x = -1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_PUNTO_FINAL",
+    "grupo": "adicional",
+    "fuente": "x = 1. #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_PUNTO_INICIAL",
+    "grupo": "adicional",
+    "fuente": "x = .5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_EXPONENTE",
+    "grupo": "adicional",
+    "fuente": "x = 2e3 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "NUM_DOBLE_PUNTO",
+    "grupo": "adicional",
+    "fuente": "x = 1.2.3 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "SALIDA_NUMERO",
+    "grupo": "adicional",
+    "fuente": "salida 20 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "INSTRUCCION_VACIA",
+    "grupo": "adicional",
+    "fuente": "",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "DOBLE_TERMINADOR",
+    "grupo": "adicional",
+    "fuente": "x = 1 ##",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "ASIG_SIN_VALOR",
+    "grupo": "adicional",
+    "fuente": "x = #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "DOS_OPERADORES",
+    "grupo": "adicional",
+    "fuente": "x = y + z * t #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "SIN_OPERADOR",
+    "grupo": "adicional",
+    "fuente": "x = y z #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "COMENTARIO",
+    "grupo": "adicional",
+    "fuente": "x /* comentario */ = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "COMENTARIO_MULTILINEA",
+    "grupo": "adicional",
+    "fuente": "x = 1 # /* a\nb */",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "COMENTARIO_SIN_CIERRE",
+    "grupo": "adicional",
+    "fuente": "x = 1 # /* comentario",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "COMENTARIO_ANIDADO",
+    "grupo": "adicional",
+    "fuente": "/* exterior /* interior */ */ x = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "NO_PEGAR_ID",
+    "grupo": "adicional",
+    "fuente": "x y = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "DOS_ID_POR_COMENTARIO",
+    "grupo": "adicional",
+    "fuente": "x/* c */y = 1 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "CARACTER_AJENO",
+    "grupo": "adicional",
+    "fuente": "x = @ #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PARENTESIS",
+    "grupo": "adicional",
+    "fuente": "x = ( y + z ) #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "OP_43_x_y",
+    "grupo": "operadores",
+    "fuente": "z = x + y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_43_x_2.5",
+    "grupo": "operadores",
+    "fuente": "z = x + 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_43_10_y",
+    "grupo": "operadores",
+    "fuente": "z = 10 + y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_43_10_2.5",
+    "grupo": "operadores",
+    "fuente": "z = 10 + 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_45_x_y",
+    "grupo": "operadores",
+    "fuente": "z = x - y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_45_x_2.5",
+    "grupo": "operadores",
+    "fuente": "z = x - 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_45_10_y",
+    "grupo": "operadores",
+    "fuente": "z = 10 - y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_45_10_2.5",
+    "grupo": "operadores",
+    "fuente": "z = 10 - 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_42_x_y",
+    "grupo": "operadores",
+    "fuente": "z = x * y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_42_x_2.5",
+    "grupo": "operadores",
+    "fuente": "z = x * 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_42_10_y",
+    "grupo": "operadores",
+    "fuente": "z = 10 * y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_42_10_2.5",
+    "grupo": "operadores",
+    "fuente": "z = 10 * 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_47_x_y",
+    "grupo": "operadores",
+    "fuente": "z = x / y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_47_x_2.5",
+    "grupo": "operadores",
+    "fuente": "z = x / 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_47_10_y",
+    "grupo": "operadores",
+    "fuente": "z = 10 / y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_47_10_2.5",
+    "grupo": "operadores",
+    "fuente": "z = 10 / 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_37_x_y",
+    "grupo": "operadores",
+    "fuente": "z = x % y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_37_x_2.5",
+    "grupo": "operadores",
+    "fuente": "z = x % 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_37_10_y",
+    "grupo": "operadores",
+    "fuente": "z = 10 % y #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "OP_37_10_2.5",
+    "grupo": "operadores",
+    "fuente": "z = 10 % 2.5 #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": "Cada operador admite ID o NUM a ambos lados."
+  },
+  {
+    "id": "PROG_MINIMO",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a x = 0 # End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_SOLO_SALIDA",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a salida x # End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_VACIO",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_SIN_NOMBRE",
+    "grupo": "contexto",
+    "fuente": "Begin Programa x = 1 # End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_SIN_END",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a x = 1 #",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_END_EXTRA",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a x = 1 # End End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PROG_MINUSCULA",
+    "grupo": "contexto",
+    "fuente": "begin Programa a x = 1 # End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "P4_8_BARRAS_LITERALES",
+    "grupo": "contexto",
+    "fuente": "Begin / Programa prueba / x = 5 # / salida x # / End",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "INSTRUCCION_NO_PROGRAMA",
+    "grupo": "contexto",
+    "fuente": "x = 10 #",
+    "inicio": "S",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "PROGRAMA_NO_INSTRUCCION",
+    "grupo": "contexto",
+    "fuente": "Begin Programa a x = 1 # End",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_REAL",
+    "grupo": "extension_adicional",
+    "fuente": "real temperatura #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_ID_TIPO",
+    "grupo": "extension_adicional",
+    "fuente": "entero real #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_SIN_TERMINADOR",
+    "grupo": "extension_adicional",
+    "fuente": "entero contador",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_CON_INICIALIZACION",
+    "grupo": "extension_adicional",
+    "fuente": "entero contador = 0 #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_TIPO_DISTINTO",
+    "grupo": "extension_adicional",
+    "fuente": "cadena texto #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_CONSERVA_ASIG",
+    "grupo": "extension_adicional",
+    "fuente": "x = y + 1 #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_CONSERVA_SALIDA",
+    "grupo": "extension_adicional",
+    "fuente": "salida x #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": true,
+    "justificacion": ""
+  },
+  {
+    "id": "EXT_TIPO_EN_MAYUSCULA",
+    "grupo": "extension_adicional",
+    "fuente": "Entero contador #",
+    "inicio": "I",
+    "extendida": true,
+    "esperado": false,
+    "justificacion": ""
+  },
+  {
+    "id": "BASE_NO_DECLARA",
+    "grupo": "extension_adicional",
+    "fuente": "entero contador #",
+    "inicio": "I",
+    "extendida": false,
+    "esperado": false,
+    "justificacion": ""
+  }
+]

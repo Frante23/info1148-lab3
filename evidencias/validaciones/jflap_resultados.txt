@@ -1,0 +1,78 @@
+JFLAP 7.1: XMLCodec + eliminación de unitarias + CNFConverter + CYKParser.
+No se modifican los archivos .jff. La forma normal solo existe en memoria.
+P4_1 | inicio=I | extendida=0 | i=n# | ACEPTADA
+P4_2 | inicio=I | extendida=0 | i=i+i# | ACEPTADA
+P4_3 | inicio=I | extendida=0 | si# | ACEPTADA
+P4_4 | inicio=I | extendida=0 | in# | RECHAZADA
+P4_5 | inicio=I | extendida=0 | i=+ii# | RECHAZADA
+P4_6 | inicio=I | extendida=0 | s# | RECHAZADA
+P4_7 | inicio=I | extendida=0 | i=n | RECHAZADA
+P4_8 | inicio=S | extendida=0 | bpii=n#si#e | ACEPTADA
+P3_1 | inicio=I | extendida=0 | i=n# | ACEPTADA
+P3_2 | inicio=I | extendida=0 | i=i*i# | ACEPTADA
+P3_3 | inicio=I | extendida=0 | si# | ACEPTADA
+REF | inicio=S | extendida=0 | bpii=n#i=n#i=i+i#i=i+i#i=i-i#i=i-i#i=i*i#i=i/i#i=i%n#si#si#si#si#si#i=n#i=i#i=i#i=i#si#si#e | ACEPTADA
+EXT_V | inicio=I | extendida=1 | ti# | ACEPTADA
+EXT_I | inicio=I | extendida=1 | t# | RECHAZADA
+EXT_PROG | inicio=S | extendida=1 | bpiti#ri#i=n#i=n#i=i+n#si#si#e | ACEPTADA
+ID_LARGO | inicio=I | extendida=0 | i=i# | ACEPTADA
+ID_MAYUSCULA | inicio=I | extendida=0 | i=i# | ACEPTADA
+RESERVADA_ID | inicio=I | extendida=0 | s=n# | RECHAZADA
+ID_PREFIJO_RESERVADO | inicio=I | extendida=0 | i=n# | ACEPTADA
+NUM_CERO | inicio=I | extendida=0 | i=n# | ACEPTADA
+NUM_REAL | inicio=I | extendida=0 | i=n# | ACEPTADA
+NUM_CEROS | inicio=I | extendida=0 | i=n# | ACEPTADA
+NUM_NEGATIVO | inicio=I | extendida=0 | i=-n# | RECHAZADA
+SALIDA_NUMERO | inicio=I | extendida=0 | sn# | RECHAZADA
+INSTRUCCION_VACIA | inicio=I | extendida=0 |  | RECHAZADA
+DOBLE_TERMINADOR | inicio=I | extendida=0 | i=n## | RECHAZADA
+ASIG_SIN_VALOR | inicio=I | extendida=0 | i=# | RECHAZADA
+DOS_OPERADORES | inicio=I | extendida=0 | i=i+i*i# | RECHAZADA
+SIN_OPERADOR | inicio=I | extendida=0 | i=ii# | RECHAZADA
+COMENTARIO | inicio=I | extendida=0 | i=n# | ACEPTADA
+COMENTARIO_MULTILINEA | inicio=I | extendida=0 | i=n# | ACEPTADA
+NO_PEGAR_ID | inicio=I | extendida=0 | ii=n# | RECHAZADA
+DOS_ID_POR_COMENTARIO | inicio=I | extendida=0 | ii=n# | RECHAZADA
+OP_43_x_y | inicio=I | extendida=0 | i=i+i# | ACEPTADA
+OP_43_x_2.5 | inicio=I | extendida=0 | i=i+n# | ACEPTADA
+OP_43_10_y | inicio=I | extendida=0 | i=n+i# | ACEPTADA
+OP_43_10_2.5 | inicio=I | extendida=0 | i=n+n# | ACEPTADA
+OP_45_x_y | inicio=I | extendida=0 | i=i-i# | ACEPTADA
+OP_45_x_2.5 | inicio=I | extendida=0 | i=i-n# | ACEPTADA
+OP_45_10_y | inicio=I | extendida=0 | i=n-i# | ACEPTADA
+OP_45_10_2.5 | inicio=I | extendida=0 | i=n-n# | ACEPTADA
+OP_42_x_y | inicio=I | extendida=0 | i=i*i# | ACEPTADA
+OP_42_x_2.5 | inicio=I | extendida=0 | i=i*n# | ACEPTADA
+OP_42_10_y | inicio=I | extendida=0 | i=n*i# | ACEPTADA
+OP_42_10_2.5 | inicio=I | extendida=0 | i=n*n# | ACEPTADA
+OP_47_x_y | inicio=I | extendida=0 | i=i/i# | ACEPTADA
+OP_47_x_2.5 | inicio=I | extendida=0 | i=i/n# | ACEPTADA
+OP_47_10_y | inicio=I | extendida=0 | i=n/i# | ACEPTADA
+OP_47_10_2.5 | inicio=I | extendida=0 | i=n/n# | ACEPTADA
+OP_37_x_y | inicio=I | extendida=0 | i=i%i# | ACEPTADA
+OP_37_x_2.5 | inicio=I | extendida=0 | i=i%n# | ACEPTADA
+OP_37_10_y | inicio=I | extendida=0 | i=n%i# | ACEPTADA
+OP_37_10_2.5 | inicio=I | extendida=0 | i=n%n# | ACEPTADA
+PROG_MINIMO | inicio=S | extendida=0 | bpii=n#e | ACEPTADA
+PROG_SOLO_SALIDA | inicio=S | extendida=0 | bpisi#e | ACEPTADA
+PROG_VACIO | inicio=S | extendida=0 | bpie | RECHAZADA
+PROG_SIN_NOMBRE | inicio=S | extendida=0 | bpi=n#e | RECHAZADA
+PROG_SIN_END | inicio=S | extendida=0 | bpii=n# | RECHAZADA
+PROG_END_EXTRA | inicio=S | extendida=0 | bpii=n#ee | RECHAZADA
+PROG_MINUSCULA | inicio=S | extendida=0 | ipii=n#e | RECHAZADA
+P4_8_BARRAS_LITERALES | inicio=S | extendida=0 | b/pi/i=n#/si#/e | RECHAZADA
+INSTRUCCION_NO_PROGRAMA | inicio=S | extendida=0 | i=n# | RECHAZADA
+PROGRAMA_NO_INSTRUCCION | inicio=I | extendida=0 | bpii=n#e | RECHAZADA
+EXT_REAL | inicio=I | extendida=1 | ri# | ACEPTADA
+EXT_ID_TIPO | inicio=I | extendida=1 | tr# | RECHAZADA
+EXT_SIN_TERMINADOR | inicio=I | extendida=1 | ti | RECHAZADA
+EXT_CON_INICIALIZACION | inicio=I | extendida=1 | ti=n# | RECHAZADA
+EXT_TIPO_DISTINTO | inicio=I | extendida=1 | ii# | RECHAZADA
+EXT_CONSERVA_ASIG | inicio=I | extendida=1 | i=i+n# | ACEPTADA
+EXT_CONSERVA_SALIDA | inicio=I | extendida=1 | si# | ACEPTADA
+EXT_TIPO_EN_MAYUSCULA | inicio=I | extendida=1 | ii# | RECHAZADA
+BASE_NO_DECLARA | inicio=I | extendida=0 | ii# | RECHAZADA
+BRUTE i=i+i#: S => I => A => R => D=VFV# => D=DFD# => i=i+i#
+BRUTE si#: S => I => O => sD# => si#
+BRUTE ti#: S => I => J => TD# => ti#
+OK: 72 entradas contrastadas con CYK; 3 derivaciones con BruteParser; 4 archivos abiertos.

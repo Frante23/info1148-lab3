@@ -1,0 +1,82 @@
+{
+  "fuente": "entero contador #",
+  "inicio": "I",
+  "extendida": true,
+  "codigo_jflap": "ti#",
+  "arbol": {
+    "simbolo": "I",
+    "hijos": [
+      {
+        "simbolo": "J",
+        "hijos": [
+          {
+            "simbolo": "T",
+            "hijos": [
+              {
+                "simbolo": "t",
+                "lexema": "entero"
+              }
+            ]
+          },
+          {
+            "simbolo": "D",
+            "hijos": [
+              {
+                "simbolo": "i",
+                "lexema": "contador"
+              }
+            ]
+          },
+          {
+            "simbolo": "#",
+            "lexema": "#"
+          }
+        ]
+      }
+    ]
+  },
+  "pasos": [
+    {
+      "forma_codificada": "I",
+      "forma_tokens": "<instruccion>",
+      "forma_lexemas": "<instruccion>",
+      "produccion": null
+    },
+    {
+      "forma_codificada": "J",
+      "forma_tokens": "<declaracion>",
+      "forma_lexemas": "<declaracion>",
+      "produccion": [
+        "I",
+        "J"
+      ]
+    },
+    {
+      "forma_codificada": "TD#",
+      "forma_tokens": "<tipo> <identificador> #",
+      "forma_lexemas": "<tipo> <identificador> #",
+      "produccion": [
+        "J",
+        "TD#"
+      ]
+    },
+    {
+      "forma_codificada": "tD#",
+      "forma_tokens": "entero <identificador> #",
+      "forma_lexemas": "entero <identificador> #",
+      "produccion": [
+        "T",
+        "t"
+      ]
+    },
+    {
+      "forma_codificada": "ti#",
+      "forma_tokens": "entero ID #",
+      "forma_lexemas": "entero contador #",
+      "produccion": [
+        "D",
+        "i"
+      ]
+    }
+  ]
+}

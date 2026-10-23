@@ -1,0 +1,132 @@
+{
+  "variables": {
+    "S": "programa",
+    "L": "lista_instrucciones",
+    "I": "instruccion",
+    "A": "asignacion",
+    "C": "asignacion_simple",
+    "R": "asignacion_aritmetica",
+    "V": "operando",
+    "F": "operador",
+    "O": "salida",
+    "D": "identificador",
+    "N": "numero",
+    "J": "declaracion",
+    "T": "tipo"
+  },
+  "terminales": {
+    "b": "Begin",
+    "p": "Programa",
+    "e": "End",
+    "s": "salida",
+    "i": "ID",
+    "n": "NUM",
+    "=": "=",
+    "#": "#",
+    "+": "+",
+    "-": "-",
+    "*": "*",
+    "/": "/",
+    "%": "%",
+    "t": "entero",
+    "r": "real"
+  },
+  "producciones_base": {
+    "S": [
+      "bpDLe"
+    ],
+    "L": [
+      "IL",
+      "I"
+    ],
+    "I": [
+      "A",
+      "O"
+    ],
+    "A": [
+      "C",
+      "R"
+    ],
+    "C": [
+      "D=V#"
+    ],
+    "R": [
+      "D=VFV#"
+    ],
+    "V": [
+      "D",
+      "N"
+    ],
+    "F": [
+      "+",
+      "-",
+      "*",
+      "/",
+      "%"
+    ],
+    "O": [
+      "sD#"
+    ],
+    "D": [
+      "i"
+    ],
+    "N": [
+      "n"
+    ]
+  },
+  "producciones_extendida": {
+    "S": [
+      "bpDLe"
+    ],
+    "L": [
+      "IL",
+      "I"
+    ],
+    "I": [
+      "A",
+      "O",
+      "J"
+    ],
+    "A": [
+      "C",
+      "R"
+    ],
+    "C": [
+      "D=V#"
+    ],
+    "R": [
+      "D=VFV#"
+    ],
+    "V": [
+      "D",
+      "N"
+    ],
+    "F": [
+      "+",
+      "-",
+      "*",
+      "/",
+      "%"
+    ],
+    "O": [
+      "sD#"
+    ],
+    "D": [
+      "i"
+    ],
+    "N": [
+      "n"
+    ],
+    "J": [
+      "TD#"
+    ],
+    "T": [
+      "t",
+      "r"
+    ]
+  },
+  "inicio_programa": "S",
+  "inicio_instruccion": "I",
+  "id": "[A-Za-z][A-Za-z0-9_]*",
+  "numero": "[0-9]+(?:\\.[0-9]+)?"
+}

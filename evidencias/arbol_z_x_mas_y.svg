@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="920" viewBox="0 0 2100 920">
+<rect width="100%" height="100%" fill="white"/>
+<line x1="145.0" y1="518" x2="145" y2="586" stroke="#59636e" stroke-width="3"/>
+<line x1="865.0" y1="650" x2="865" y2="718" stroke="#59636e" stroke-width="3"/>
+<line x1="865.0" y1="518" x2="865.0" y2="586" stroke="#59636e" stroke-width="3"/>
+<line x1="1225.0" y1="518" x2="1225" y2="586" stroke="#59636e" stroke-width="3"/>
+<line x1="1585.0" y1="650" x2="1585" y2="718" stroke="#59636e" stroke-width="3"/>
+<line x1="1585.0" y1="518" x2="1585.0" y2="586" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="145.0" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="505" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="865.0" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="1225.0" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="1585.0" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="386" x2="1945" y2="454" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="254" x2="1045.0" y2="322" stroke="#59636e" stroke-width="3"/>
+<line x1="1045.0" y1="122" x2="1045.0" y2="190" stroke="#59636e" stroke-width="3"/>
+<rect x="67.0" y="586" width="156" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="145" y="632" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">ID[z]</text>
+<rect x="95.0" y="454" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="145.0" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">D</text>
+<rect x="455.0" y="454" width="100" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="505" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">=</text>
+<rect x="787.0" y="718" width="156" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="865" y="764" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">ID[x]</text>
+<rect x="815.0" y="586" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="865.0" y="632" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">D</text>
+<rect x="815.0" y="454" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="865.0" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">V</text>
+<rect x="1175.0" y="586" width="100" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="1225" y="632" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">+</text>
+<rect x="1175.0" y="454" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1225.0" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">F</text>
+<rect x="1507.0" y="718" width="156" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="1585" y="764" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">ID[y]</text>
+<rect x="1535.0" y="586" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1585.0" y="632" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">D</text>
+<rect x="1535.0" y="454" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1585.0" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">V</text>
+<rect x="1895.0" y="454" width="100" height="64" rx="12" fill="#fff3c4" stroke="#305f94" stroke-width="2"/>
+<text x="1945" y="500" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">#</text>
+<rect x="995.0" y="322" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1045.0" y="368" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">R</text>
+<rect x="995.0" y="190" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1045.0" y="236" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">A</text>
+<rect x="995.0" y="58" width="100" height="64" rx="12" fill="#daeaf5" stroke="#305f94" stroke-width="2"/>
+<text x="1045.0" y="104" text-anchor="middle" font-family="monospace" font-size="43" fill="#152d47">I</text>
+<text x="1050.0" y="850" text-anchor="middle" font-family="monospace" font-size="30" fill="#374151">I: instruccion  |  A: asignacion  |  R: asignacion_aritmetica</text>
+<text x="1050.0" y="895" text-anchor="middle" font-family="monospace" font-size="30" fill="#374151">D: identificador  |  V: operando  |  F: operador</text>
+</svg>

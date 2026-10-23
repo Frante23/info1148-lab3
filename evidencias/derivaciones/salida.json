@@ -1,0 +1,68 @@
+{
+  "fuente": "salida z #",
+  "inicio": "I",
+  "extendida": false,
+  "codigo_jflap": "si#",
+  "arbol": {
+    "simbolo": "I",
+    "hijos": [
+      {
+        "simbolo": "O",
+        "hijos": [
+          {
+            "simbolo": "s",
+            "lexema": "salida"
+          },
+          {
+            "simbolo": "D",
+            "hijos": [
+              {
+                "simbolo": "i",
+                "lexema": "z"
+              }
+            ]
+          },
+          {
+            "simbolo": "#",
+            "lexema": "#"
+          }
+        ]
+      }
+    ]
+  },
+  "pasos": [
+    {
+      "forma_codificada": "I",
+      "forma_tokens": "<instruccion>",
+      "forma_lexemas": "<instruccion>",
+      "produccion": null
+    },
+    {
+      "forma_codificada": "O",
+      "forma_tokens": "<salida>",
+      "forma_lexemas": "<salida>",
+      "produccion": [
+        "I",
+        "O"
+      ]
+    },
+    {
+      "forma_codificada": "sD#",
+      "forma_tokens": "salida <identificador> #",
+      "forma_lexemas": "salida <identificador> #",
+      "produccion": [
+        "O",
+        "sD#"
+      ]
+    },
+    {
+      "forma_codificada": "si#",
+      "forma_tokens": "salida ID #",
+      "forma_lexemas": "salida z #",
+      "produccion": [
+        "D",
+        "i"
+      ]
+    }
+  ]
+}

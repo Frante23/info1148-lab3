@@ -1,0 +1,368 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,array,booktabs,longtable,tabularx,graphicx,xcolor,float,fancyhdr,colortbl,listings}
+\usepackage{hyperref}
+\definecolor{azul}{HTML}{305F94}
+\definecolor{cabecera}{HTML}{DAEAF5}
+\definecolor{fondo}{HTML}{F6F8FA}
+\hypersetup{colorlinks=true,urlcolor=azul,linkcolor=azul,pdftitle={Laboratorio 3 Diseño y Validación de Gramáticas},pdfauthor={Franco Oyarzo Calisto y Vicente Rivera Sánchez}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Teoría de la Computación INFO1148}
+\fancyhead[R]{\small Laboratorio 3}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\renewcommand{\arraystretch}{1.23}
+\newcommand{\cod}[1]{\texttt{#1}}
+\newcommand{\nt}[1]{\texttt{<#1>}}
+\newcommand{\subtitulo}[1]{\vspace{5pt}\textbf{#1}\par\nopagebreak[4]}
+\newcommand{\cab}[1]{\rowcolor{cabecera}#1}
+\newcommand{\ID}[1]{\ensuremath{\mathrm{ID}[\texttt{#1}]}}
+\newcommand{\NUM}[1]{\ensuremath{\mathrm{NUM}[\texttt{#1}]}}
+\newcommand{\repo}{https://github.com/Frante23/info1148-lab3}
+\newcommand{\fechaEntrega}{25 de octubre de 2026}
+% Admite compilar desde informe/ o seleccionar este archivo desde la raíz.
+\IfFileExists{../gramaticas/especificacion.json}{\def\raiz{../}}{\def\raiz{}}
+\lstset{basicstyle=\ttfamily\small,columns=fullflexible,keepspaces=true,breaklines=true,
+showstringspaces=false,frame=single,rulecolor=\color{cabecera},backgroundcolor=\color{fondo},
+numbers=left,numberstyle=\tiny\color{gray},numbersep=8pt,tabsize=2}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries INFORME DE LABORATORIO 3}\par\vspace{5pt}
+{\Large\bfseries Diseño y Validación de Gramáticas}\par
+{\large Gramáticas Libres de Contexto}
+\end{center}
+\vspace{6pt}
+\begin{tabularx}{\textwidth}{|p{0.28\textwidth}|X|}\hline
+\cab{\textbf{Antecedente}&\textbf{Información}}\\\hline
+Asignatura&Teoría de la Computación INFO1148\\\hline
+Carrera&Ingeniería Civil en Informática\\\hline
+Docente&Marcos Lévano\\\hline
+Integrantes&Franco Oyarzo Calisto\\&Vicente Rivera Sánchez (jefe de pareja)\\\hline
+Fecha de entrega&\fechaEntrega\\\hline
+Herramientas&JFLAP 7.1, Java 21 y Python 3\\\hline
+Repositorio&\href{\repo}{github.com/Frante23/info1148-lab3}\\\hline
+\end{tabularx}
+
+\section{Introducción}
+En este laboratorio diseñamos una gramática libre de contexto para un lenguaje que permite asignar valores, realizar operaciones aritméticas y mostrar variables. Definimos sus terminales y no terminales, construimos las producciones y comprobamos tanto instrucciones aisladas como el programa completo de referencia. Después desarrollamos derivaciones por la izquierda, construimos el árbol de \cod{z = x + y \#} y analizamos los errores de las cadenas indicadas en la pauta. Finalmente incorporamos declaraciones de variables con \cod{entero} y \cod{real}, manteniendo las instrucciones anteriores y verificando los cambios con la misma gramática utilizada en el informe.
+
+\subtitulo{Método y notación}
+Separamos la identificación de los lexemas del análisis de su orden. Por ejemplo, \cod{temporal} es el lexema de un token \cod{ID}; \cod{1.345} es el lexema de un token \cod{NUM}. La gramática trabaja con esas categorías finitas. Las anotaciones \ID{z} y \NUM{20} conservan el texto de la fuente para leer las derivaciones; el atributo entre corchetes no añade un terminal nuevo ni una producción.
+
+En JFLAP representamos cada terminal mediante un carácter y cada no terminal mediante una letra mayúscula. La tabla del anexo A permite pasar de las producciones del informe a los archivos \cod{.jff}. Por ejemplo, \cod{i=i+i\#} representa los tokens de \cod{z = x + y \#}; se conservan, por separado, sus lexemas. Las pruebas exigen consumir la cadena completa.
+
+\newpage
+\section{Desarrollo}
+\subsection{Pregunta 1 Componentes de la gramática}
+\subtitulo{a) Símbolos terminales}
+\begin{tabularx}{\textwidth}{|p{2.8cm}|p{4.7cm}|X|}\hline
+\cab{\textbf{Categoría}&\textbf{Terminales}&\textbf{Tratamiento}}\\\hline
+Palabras reservadas&\cod{Begin}, \cod{Programa}, \cod{End}, \cod{salida}&Se reconocen con esa combinación exacta de mayúsculas y minúsculas.\\\hline
+Operadores&\cod{=}, \cod{+}, \cod{-}, \cod{*}, \cod{/}, \cod{\%}&El primero asigna; los otros cinco se ubican entre dos operandos.\\\hline
+Símbolos especiales&\cod{\#}&Termina cada instrucción, pero no el encabezado ni \cod{End}.\\\hline
+Identificadores&\cod{ID}&Categoría para \cod{x}, \cod{z2}, \cod{temporal} y \cod{operativo\_01\_02}, entre otros.\\\hline
+Números&\cod{NUM}&Categoría para enteros y decimales sin signo, incluidos \cod{0}, \cod{20} y \cod{1.345}.\\\hline
+\end{tabularx}
+
+Los espacios y saltos de línea separan lexemas, pero no son terminales de la GLC. Los comentarios \cod{/* ... */} se descartan en la etapa léxica. El guion bajo y el punto decimal pertenecen a la escritura de \cod{ID} y \cod{NUM}; no se reciben como tokens separados en el análisis sintáctico.
+
+\subtitulo{b) Símbolos no terminales}
+Utilizamos once no terminales. Los nombres descriptivos y sus abreviaturas son:
+\begin{center}\small
+\begin{tabular}{ll@{\qquad}ll}
+$S$&\nt{programa}&$L$&\nt{lista\_instrucciones}\\
+$I$&\nt{instruccion}&$A$&\nt{asignacion}\\
+$C$&\nt{asignacion\_simple}&$R$&\nt{asignacion\_aritmetica}\\
+$V$&\nt{operando}&$F$&\nt{operador}\\
+$O$&\nt{salida}&$D$&\nt{identificador}\\
+$N$&\nt{numero}&&
+\end{tabular}\end{center}
+Los nombres entre ángulos y las letras representan los mismos símbolos. Su función se explica en la pregunta 2.
+
+\subtitulo{c) Símbolo inicial}
+El símbolo inicial es $S=\nt{programa}$, porque el lenguaje principal contiene programas completos. Para estudiar las instrucciones de las preguntas 3 y 4 usamos derivaciones desde $I=\nt{instruccion}$. Distinguimos:
+\[
+L_S=\{w\in\Sigma^*\mid S\Rightarrow^*w\},\qquad
+L_I=\{w\in\Sigma^*\mid I\Rightarrow^*w\}.
+\]
+Una instrucción válida no es, por sí sola, un programa completo: los tokens de \cod{x = 10 \#} pertenecen a $L_I$, pero necesitan encabezado y cierre para pertenecer a $L_S$.
+
+\newpage
+\subtitulo{d) Definición formal de la gramática}
+La gramática base es $G=(V,\Sigma,P,S)$, donde:
+\begin{align*}
+V={}&\{\nt{programa},\nt{lista\_instrucciones},\nt{instruccion},\\
+&\nt{asignacion},\nt{asignacion\_simple},\nt{asignacion\_aritmetica},\\
+&\nt{operando},\nt{operador},\nt{salida},\nt{identificador},\nt{numero}\},\\
+\Sigma={}&\{\cod{Begin},\cod{Programa},\cod{End},\cod{salida},\cod{ID},\cod{NUM},\\
+&\hspace{1.4cm}\cod{=},\cod{\#},\cod{+},\cod{-},\cod{*},\cod{/},\cod{\%}\}.
+\end{align*}
+En las producciones usamos las abreviaturas de la tabla anterior: en particular, la letra \cod{V} representa \nt{operando}, mientras que $V$ en la cuádrupla nombra el conjunto completo de no terminales. El conjunto $P$ contiene las 19 alternativas de la pregunta 2 y el símbolo inicial es $S=\nt{programa}$. Se cumple $V\cap\Sigma=\varnothing$, con once no terminales y trece tipos de terminal.
+
+Cada producción tiene un solo no terminal en su lado izquierdo. Por ejemplo, $R\to D=VFV\#$ se aplica independientemente de los símbolos vecinos; esa es la condición que hace libre de contexto a esta gramática.
+
+\subtitulo{e) Análisis de identificadores y números}
+No enumeramos \cod{x}, \cod{y}, \cod{temporal} ni cada nombre futuro como terminales distintos. Una lista de ese tipo solo describiría los ejemplos conocidos. Tampoco enumeramos los números: siempre se podría escribir un entero de más dígitos o un decimal diferente. Usamos dos categorías con reglas léxicas explícitas:
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{1.4cm}|p{6.4cm}|X|}\hline
+\cab{\textbf{Token}&\textbf{Patrón}&\textbf{Ejemplos}}\\\hline
+\cod{ID}&\cod{[A-Za-z][A-Za-z0-9\_]*}&\cod{x}, \cod{z2}, \cod{Variable\_A2}.\\\hline
+\cod{NUM}&\cod{[0-9]+(\textbackslash.[0-9]+)?}&\cod{0}, \cod{20}, \cod{1.345}.\\\hline
+\end{tabularx}\end{center}
+En el patrón numérico, el punto escapado es literal; el grupo decimal es opcional. Si está presente, exige al menos un dígito a cada lado. Así, \cod{.5} y \cod{1.} se rechazan. No incluimos signo unario ni exponentes. Aunque el enunciado los llama positivos, aceptamos \cod{0} porque aparece expresamente en el programa. También admitimos ceros iniciales: no hay una restricción que los prohíba.
+
+La etapa léxica toma el lexema completo antes de clasificarlo. Por eso \cod{salida} es reservada y no puede usarse como nombre de variable, mientras que \cod{salida2} sí es \cod{ID}. Adoptamos letras ASCII para precisar el alfabeto implementado; los ejemplos exigidos están dentro de ese alcance. El reconocimiento distingue mayúsculas: \cod{Begin} es reservada y \cod{begin} no lo es.
+
+Los comentarios se reconocen desde \cod{/*} hasta el primer \cod{*/}, sin anidamiento. Se eliminan sin unir palabras: \cod{x/* c */y} deja dos identificadores. Un comentario sin cierre produce un error léxico antes de consultar las producciones. Formalmente, el código fuente se acepta cuando su tokenización está definida y la secuencia resultante pertenece a $L_S$ o $L_I$, según el contexto indicado.
+
+\newpage
+\subsection{Pregunta 2 Construcción de la Gramática Libre de Contexto}
+\subtitulo{a) Producciones propuestas}
+Cada barra separa alternativas; no representa un terminal del lenguaje.
+\begin{center}
+\begin{tabularx}{\textwidth}{|p{1.1cm}|X|p{2.4cm}|}\hline
+\cab{\textbf{Regla}&\textbf{Producción}&\textbf{Alternativas}}\\\hline
+P1&$S\to\cod{Begin}\ \cod{Programa}\ D\ L\ \cod{End}$&1\\\hline
+P2&$L\to I\ L\mid I$&2\\\hline
+P3&$I\to A\mid O$&2\\\hline
+P4&$A\to C\mid R$&2\\\hline
+P5&$C\to D\ \cod{=}\ V\ \cod{\#}$&1\\\hline
+P6&$R\to D\ \cod{=}\ V\ F\ V\ \cod{\#}$&1\\\hline
+P7&$V\to D\mid N$&2\\\hline
+P8&$F\to\cod{+}\mid\cod{-}\mid\cod{*}\mid\cod{/}\mid\cod{\%}$&5\\\hline
+P9&$O\to\cod{salida}\ D\ \cod{\#}$&1\\\hline
+P10&$D\to\cod{ID}$&1\\\hline
+P11&$N\to\cod{NUM}$&1\\\hline
+\multicolumn{2}{|r|}{\textbf{Total de alternativas}}&\textbf{19}\\\hline
+\end{tabularx}\end{center}
+
+\subtitulo{b) Función de cada no terminal}
+\begin{tabularx}{\textwidth}{|p{1.6cm}|X|}\hline
+\cab{\textbf{Símbolo}&\textbf{Función dentro de la gramática}}\\\hline
+$S$&Exige \cod{Begin}, \cod{Programa}, un nombre, instrucciones y \cod{End}, en ese orden.\\\hline
+$L$&Genera una o más instrucciones: $L\to IL$ continúa; $L\to I$ termina. Sin $L\to\varepsilon$, el programa vacío se rechaza.\\\hline
+$I$&Selecciona una asignación o una salida.\\\hline
+$A$&Distingue explícitamente entre asignación simple y aritmética.\\\hline
+$C$&Asigna un solo operando, como \cod{x = 20 \#} o \cod{temporal = x \#}.\\\hline
+$R$&Asigna el resultado de exactamente una operación binaria, como \cod{z = x + y \#}.\\\hline
+$V$&Permite un identificador o un número como operando.\\\hline
+$F$&Restringe la operación a uno de los cinco símbolos permitidos.\\\hline
+$O$&Exige un identificador después de \cod{salida} y luego el terminador.\\\hline
+$D$&Introduce un token identificador, con su lexema asociado.\\\hline
+$N$&Introduce un token numérico, con su lexema asociado.\\\hline
+\end{tabularx}
+
+No añadimos cadenas de operaciones ni paréntesis: \cod{x = y + z * t \#} queda fuera del alcance definido. Con una sola operación por asignación no es necesario decidir precedencia ni asociatividad. Esta decisión admite todas las operaciones del programa de referencia.
+
+\newpage
+\subtitulo{c) Verificación del programa completo de referencia}
+La gramática representa el programa completo. Su encabezado aplica P1: \cod{operativo\_01\_02} es \cod{ID}; el comentario se omite antes del análisis sintáctico. Para sus 20 instrucciones se usa $L\to IL$ diecinueve veces y luego $L\to I$. Cada $I$ toma la alternativa indicada:
+\begin{center}\small
+\begin{tabularx}{\textwidth}{|p{1.2cm}|p{8.2cm}|X|}\hline
+\cab{\textbf{N.º}&\textbf{Instrucciones del programa}&\textbf{Rama}}\\\hline
+1--2&\cod{x = 1.345 \#}; \cod{y = 20 \#}&$I\Rightarrow A\Rightarrow C$\\\hline
+3--4&\cod{z = x + y \#}; \cod{z2 = x + y \#}&$I\Rightarrow A\Rightarrow R$\\\hline
+5--6&\cod{h = z - x \#}; \cod{h2 = z - x \#}&$I\Rightarrow A\Rightarrow R$\\\hline
+7--9&\cod{k = h * y \#}; \cod{t = k / z \#}; \cod{m = k \% 10 \#}&$I\Rightarrow A\Rightarrow R$\\\hline
+10--14&\cod{salida z \#}; \cod{salida h \#}; \cod{salida k \#}; \cod{salida t \#}; \cod{salida m \#}&$I\Rightarrow O$\\\hline
+15--18&\cod{temporal = 0 \#}; \cod{temporal = x \#}; \cod{x = y \#}; \cod{y = temporal \#}&$I\Rightarrow A\Rightarrow C$\\\hline
+19--20&\cod{salida x \#}; \cod{salida y \#}&$I\Rightarrow O$\\\hline
+\end{tabularx}\end{center}
+La expansión de la lista es
+\[
+L\Rightarrow IL\Rightarrow IIL\Rightarrow\cdots\Rightarrow I^{19}L\Rightarrow I^{20}.
+\]
+Esta expresión describe solo la lista. En una derivación por la izquierda del programa entero se completa cada $I$ antes de expandir el $L$ que queda a su derecha. Para la primera instrucción, el prefijo de esa derivación es:
+\[
+\begin{aligned}
+S&\Rightarrow\cod{Begin}\ \cod{Programa}\ D\ L\ \cod{End}\\
+ &\Rightarrow\cod{Begin}\ \cod{Programa}\ \ID{operativo\_01\_02}\ L\ \cod{End}\\
+ &\Rightarrow\cod{Begin}\ \cod{Programa}\ \ID{operativo\_01\_02}\ I\ L\ \cod{End}\\
+ &\Rightarrow\cod{Begin}\ \cod{Programa}\ \ID{operativo\_01\_02}\ A\ L\ \cod{End}\\
+ &\Rightarrow\cod{Begin}\ \cod{Programa}\ \ID{operativo\_01\_02}\ C\ L\ \cod{End}\\
+ &\Rightarrow\cod{Begin}\ \cod{Programa}\ \ID{operativo\_01\_02}\ D=V\#\ L\ \cod{End}.
+\end{aligned}
+\]
+Luego $D\Rightarrow\ID{x}$ y $V\Rightarrow N\Rightarrow\NUM{1.345}$ completan la primera asignación. Se continúa con las otras diecinueve instrucciones y se consume \cod{End}.
+
+La comprobación construyó un árbol con \textbf{20 instrucciones, 13 asignaciones y 7 salidas}. Seis asignaciones usan P5 y siete usan P6. Dos reconocedores en Python coinciden y el CYK de JFLAP acepta también el programa tokenizado. La fuente íntegra está en \cod{ejemplos/programa\_referencia.txt}; su resultado se registra como caso \cod{REF} en las evidencias.
+
+\newpage
+\subsection{Pregunta 3 Derivaciones y árbol sintáctico}
+\subtitulo{a) Derivación por la izquierda de \cod{z = x + y \#}}
+Partimos de $I$, porque la cadena es una instrucción. Cada fila reemplaza únicamente el no terminal ubicado más a la izquierda. Se usan los códigos de JFLAP para verificar cada sustitución: \cod{i} es \cod{ID} y conserva los lexemas \cod{z}, \cod{x} e \cod{y} en ese orden.
+\begin{center}
+\input{\raiz evidencias/derivaciones/asignacion_pasos.tex}
+\end{center}
+Con los atributos de los identificadores, la misma derivación se lee:
+\[
+\begin{aligned}
+I&\Rightarrow A\Rightarrow R\Rightarrow D=VFV\#\\
+ &\Rightarrow\ID{z}=VFV\#\Rightarrow\ID{z}=DFV\#\\
+ &\Rightarrow\ID{z}=\ID{x}FV\#\Rightarrow\ID{z}=\ID{x}+V\#\\
+ &\Rightarrow\ID{z}=\ID{x}+D\#\Rightarrow\ID{z}=\ID{x}+\ID{y}\#.
+\end{aligned}
+\]
+La secuencia terminal es \cod{ID = ID + ID \#}; sus lexemas reconstruyen exactamente \cod{z = x + y \#}. No se introduce una regla \cod{ID}$\to$\cod{z}: \cod{ID} ya es terminal y \cod{z} es su atributo léxico. Así se verifica la cadena solicitada sin enumerar los posibles identificadores dentro de $P$.
+
+\subtitulo{b) Derivación por la izquierda de \cod{salida z \#}}
+\begin{center}
+\input{\raiz evidencias/derivaciones/salida_pasos.tex}
+\end{center}
+Con lexemas: $I\Rightarrow O\Rightarrow\cod{salida}\ D\ \#\Rightarrow\cod{salida}\ \ID{z}\ \#$. Se obtiene \cod{salida z \#}; en JFLAP se escribe \cod{si\#}. El terminador forma parte de P9 y no se puede omitir.
+
+\newpage
+\subtitulo{c) Árbol de derivación de \cod{z = x + y \#}}
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth,height=0.46\textheight,keepaspectratio]{\raiz evidencias/arbol_z_x_mas_y.png}
+\caption{Árbol base con raíz $I$. Las hojas \cod{ID} conservan los lexemas \cod{z}, \cod{x} e \cod{y}; su lectura de izquierda a derecha reconstruye la instrucción.}
+\label{fig:arbol}
+\end{figure}
+\subtitulo{d) Relación entre raíz, no terminales, terminales y hojas}
+La raíz $I$ indica que se analiza una instrucción. Sus nodos internos $A$ y $R$ seleccionan la asignación aritmética. Los seis hijos de $R$ son $D$, \cod{=}, $V$, $F$, $V$ y \cod{\#}, exactamente como en P6. El primer $D$ representa el destino \cod{z}; los dos $V$ generan \cod{x} e \cod{y}; y $F$ genera \cod{+}.
+
+Los no terminales son categorías que deben expandirse. Las hojas son terminales: \ID{z}, \cod{=}, \ID{x}, \cod{+}, \ID{y} y \cod{\#}. Al recorrerlas de izquierda a derecha se obtiene el rendimiento del árbol. En un programa completo la raíz sería $S$; aquí se usa el subárbol desde $I$. La copia de JFLAP para instrucciones agrega la raíz auxiliar $S\to I$, documentada en el anexo A.
+
+\subtitulo{e) Validación de las tres cadenas adicionales}
+\begin{tabularx}{\textwidth}{|p{3.4cm}|p{1.5cm}|X|}\hline
+\cab{\textbf{Cadena}&\textbf{¿Desde $I$?}&\textbf{Justificación}}\\\hline
+\cod{x = 20 \#}&Sí&$I\Rightarrow A\Rightarrow C\Rightarrow D=V\#$. Se completa con $D\Rightarrow\ID{x}$ y $V\Rightarrow N\Rightarrow\NUM{20}$.\\\hline
+\cod{z = x * y \#}&Sí&$I\Rightarrow A\Rightarrow R\Rightarrow D=VFV\#$. Los identificadores conservan \cod{z}, \cod{x}, \cod{y}, y $F\Rightarrow\cod{*}$.\\\hline
+\cod{salida temporal \#}&Sí&$I\Rightarrow O\Rightarrow\cod{salida}\ D\ \#$, con $D\Rightarrow\ID{temporal}$. El nombre cumple el patrón de identificadores.\\\hline
+\end{tabularx}
+Estas justificaciones resumen derivaciones de pertenencia. Los tres casos también fueron verificados por los dos reconocedores de Python y por JFLAP.
+
+\newpage
+\subsection{Pregunta 4 Validación y detección de errores}
+La pertenencia se evalúa desde $I$ en los casos 1 a 7 y desde $S$ en el caso 8. Así conservamos el inicio de programa y analizamos las instrucciones aisladas de la actividad.
+\begin{center}\small
+\begin{tabularx}{\textwidth}{|p{1.0cm}|p{3.3cm}|p{1.5cm}|X|}\hline
+\cab{\textbf{Caso}&\textbf{Cadena}&\textbf{¿Se genera?}&\textbf{Justificación o error detectado}}\\\hline
+1&\cod{x = 10 \#}&Sí, desde $I$&Asignación simple: \cod{ID = NUM \#}. P5 admite el número mediante $V\to N\to\cod{NUM}$.\\\hline
+2&\cod{z = x + y \#}&Sí, desde $I$&Tiene destino, asignación, dos operandos, operador infijo y terminador. Sigue P6, con $F\to\cod{+}$.\\\hline
+3&\cod{salida z \#}&Sí, desde $I$&Sigue P9: palabra reservada, identificador y terminador.\\\hline
+4&\cod{x 10 \#}&No&Ambas asignaciones exigen \cod{=} después del destino. El número aparece antes de ese símbolo. Corrección mínima: \cod{x = 10 \#}.\\\hline
+5&\cod{z = + x y \#}&No&Después de \cod{=} debe comenzar $V$, que solo genera \cod{ID} o \cod{NUM}; \cod{+} no es operando. El operador debe ser infijo. Corrección: \cod{z = x + y \#}.\\\hline
+6&\cod{salida \#}&No&P9 exige $D$ antes de \cod{\#}; falta la variable que se quiere mostrar. Corrección posible: \cod{salida z \#}.\\\hline
+7&\cod{x = 20}&No&Falta \cod{\#}. No se acepta la entrada al agotarse antes del terminador. Corrección: \cod{x = 20 \#}.\\\hline
+8&\cod{Begin}\newline\cod{Programa prueba}\newline\cod{x = 5 \#}\newline\cod{salida x \#}\newline\cod{End}&Sí, desde $S$&P1 usa el nombre \cod{prueba}, $L\Rightarrow IL\Rightarrow II$, una asignación simple y una salida. El cierre \cod{End} aparece después de ambas instrucciones.\\\hline
+\end{tabularx}\end{center}
+
+\subtitulo{Interpretación de los separadores del caso 8}
+La pauta imprime \cod{Begin / Programa prueba / x = 5 \# / salida x \# / End}. Interpretamos esas barras como separadores de líneas, coherentes con el programa de referencia y con las barras que separan ejemplos en la extensión. Arriba se muestra en cinco líneas. Si se leen literalmente como operadores de división, la cadena es \textbf{inválida}: P1 exige \cod{Programa} después de \cod{Begin}, sin \cod{/}. Comprobamos ambas lecturas y registramos el rechazo de la versión literal como \cod{P4\_8\_BARRAS\_LITERALES}.
+
+\subtitulo{Análisis general}
+Los cuatro errores obligatorios son sintácticos: sus lexemas individuales son reconocibles, pero faltan símbolos o están en un orden no permitido. En el caso 4 falta la asignación; en el 5 se usa una disposición prefija que no definimos; en el 6 falta un identificador; y en el 7 falta el cierre de instrucción. Las correcciones reconstruyen cadenas que siguen las reglas existentes, sin modificar las producciones para acomodar errores.
+
+\newpage
+\section{Extensión de la gramática}
+\subtitulo{Construcción seleccionada y nueva sintaxis}
+Elegimos la opción C: \textbf{declaración de variables}. Definimos estas dos formas, donde \cod{ID} representa un identificador:
+\begin{center}\cod{entero ID \#}\qquad\cod{real ID \#}\end{center}
+Por ejemplo, \cod{entero contador \#} declara una variable de tipo entero y \cod{real temperatura \#} una de tipo real. La GLC comprueba la forma de la declaración; no mantiene una tabla de símbolos ni exige que toda variable esté declarada.
+
+\subtitulo{Modificaciones formales}
+\begin{tabularx}{\textwidth}{|p{3.2cm}|X|}\hline
+\cab{\textbf{Elemento}&\textbf{Modificación}}\\\hline
+Nuevos terminales&\cod{entero} y \cod{real}, reservadas en la versión extendida.\\\hline
+Nuevos no terminales&$J=\nt{declaracion}$ y $T=\nt{tipo}$.\\\hline
+Alternativa añadida&$I\to J$. Se conservan $I\to A$ e $I\to O$.\\\hline
+Nuevas producciones&$J\to T\ D\ \cod{\#}$; $T\to\cod{entero}\mid\cod{real}$.\\\hline
+Definición extendida&$G'=(V',\Sigma',P',S)$, con $V'=V\cup\{J,T\}$, $\Sigma'=\Sigma\cup\{\cod{entero},\cod{real}\}$ y $P'=P\cup\{I\to J,J\to TD\#,T\to\cod{entero},T\to\cod{real}\}$.\\\hline
+\end{tabularx}
+Hay trece no terminales, quince terminales y 23 alternativas. Como $L\to IL\mid I$ ya admite cualquier instrucción, no hay que cambiar la lista para mezclar declaraciones, asignaciones y salidas.
+
+\subtitulo{Cadena válida y cadena inválida}
+\textbf{Válida:} \cod{entero contador \#}. Aparecen un tipo reservado, un identificador y el terminador.
+
+\textbf{Inválida:} \cod{entero \#}. Falta $D$ después del tipo; \cod{\#} no puede ocupar la posición del nombre. Insertar \cod{contador} corrige el error. También se rechaza \cod{entero contador = 0 \#}, porque no se definió inicialización dentro de una declaración.
+
+\subtitulo{Derivación por la izquierda del ejemplo válido}
+En JFLAP, \cod{t} representa \cod{entero} y \cod{r} representa \cod{real}:
+\begin{center}
+\input{\raiz evidencias/derivaciones/declaracion_pasos.tex}
+\end{center}
+Con lexemas: $I\Rightarrow J\Rightarrow TD\#\Rightarrow\cod{entero}\ D\#\Rightarrow\cod{entero}\ \ID{contador}\ \#$. Para declarar un real cambia únicamente $T\to\cod{real}$.
+
+\newpage
+\subtitulo{Verificación en un programa completo}
+\lstinputlisting[basicstyle=\ttfamily\normalsize]{\raiz ejemplos/programa_extendido.txt}
+El encabezado y el cierre siguen P1. Las primeras dos instrucciones usan $I\to J$; las asignaciones y salidas conservan las producciones anteriores. El caso \cod{EXT\_PROG} acepta este programa en Python y JFLAP. También se probaron \cod{real temperatura \#}, la declaración sin terminador, la inicialización no definida y el uso de \cod{real} como nombre después de \cod{entero}.
+
+La inclusión $P\subset P'$ conserva las derivaciones sobre tokens de la base. En el código fuente hay un cambio léxico explícito: \cod{entero} y \cod{real}, que en la base podían clasificarse como \cod{ID}, quedan reservadas en la extensión. Por ejemplo, \cod{real = 1 \#} deja de ser una asignación válida en la versión extendida. Esta reserva es una decisión de la nueva sintaxis.
+
+\section{Conclusiones}
+La construcción mostró que reconocer lexemas válidos no basta para aceptar una instrucción: también hay que exigir su orden y sus delimitadores. Los casos \cod{x 10 \#}, \cod{z = + x y \#}, \cod{salida \#} y \cod{x = 20} contienen elementos conocidos, pero cada uno incumple una producción concreta. Separar asignaciones simples, asignaciones aritméticas y salidas permitió explicar esos errores y relacionarlos con el árbol. También fue necesario distinguir una instrucción aislada de un programa completo, porque no comparten el mismo punto de inicio.
+
+La gramática representa las 20 instrucciones del programa de referencia y admite nombres y números nuevos mediante categorías léxicas. Las derivaciones por la izquierda y el recorrido de las hojas llegan a los mismos tokens, y las verificaciones de Python y JFLAP coinciden en los casos probados. La extensión agrega dos tipos mediante cuatro alternativas nuevas y conserva las formas anteriores de instrucción. Su aceptación acredita corrección sintáctica; no demuestra que las variables estén inicializadas, que sus tipos sean compatibles o que una división sea ejecutable. Esas comprobaciones requieren una etapa semántica que no forma parte del laboratorio.
+
+\section{Consideraciones de entrega}
+Se entrega este informe en PDF, manteniendo la numeración de la plantilla, junto con los archivos de JFLAP y las evidencias en el repositorio público:
+\begin{center}\href{\repo}{\textbf{github.com/Frante23/info1148-lab3}}\end{center}
+Archivo final: \cod{Lab\_03\_JefeGrupo\_vicente\_rivera.pdf}. El repositorio contiene las gramáticas base y extendida, sus copias para instrucciones, la fuente del informe, ejemplos y resultados verificables. Los anexos documentan la codificación y las vistas de JFLAP; complementan las explicaciones de las preguntas.
+
+\clearpage\appendix
+\section{Codificación y reproducción de las evidencias}
+\subtitulo{Equivalencias entre el informe y JFLAP}
+Las mayúsculas representan los once no terminales base: \cod{S,L,I,A,C,R,V,F,O,D,N}. La extensión agrega \cod{J,T}. Las minúsculas siguientes codifican tokens, no lexemas de variables del programa:
+\begin{center}
+\begin{tabular}{|c|l|c|l|}\hline
+\cab{\textbf{Código}&\textbf{Terminal}&\textbf{Código}&\textbf{Terminal}}\\\hline
+\cod{b}&\cod{Begin}&\cod{p}&\cod{Programa}\\\hline
+\cod{e}&\cod{End}&\cod{s}&\cod{salida}\\\hline
+\cod{i}&\cod{ID}&\cod{n}&\cod{NUM}\\\hline
+\cod{t}&\cod{entero} (extensión)&\cod{r}&\cod{real} (extensión)\\\hline
+\multicolumn{4}{|l|}{\cod{=}, \cod{\#}, \cod{+}, \cod{-}, \cod{*}, \cod{/} y \cod{\%} se conservan sin cambio.}\\\hline
+\end{tabular}\end{center}
+La correspondencia es uno a uno sobre tipos de token. No distingue \cod{x} de \cod{y}: su lexema se conserva como atributo. La GLC comprueba su categoría y ubicación.
+
+\subtitulo{Archivos que se deben abrir}
+\begin{tabularx}{\textwidth}{|p{7.7cm}|X|}\hline
+\cab{\textbf{Archivo en \cod{gramaticas/}}&\textbf{Uso}}\\\hline
+\cod{gramatica\_base.jff}&Programas completos, raíz $S$ y P1 original.\\\hline
+\cod{gramatica\_extendida.jff}&Programas completos con declaraciones.\\\hline
+\cod{gramatica\_base\_instrucciones.jff}&Instrucciones aisladas de las preguntas 3 y 4.\\\hline
+\cod{gramatica\_extendida\_instrucciones.jff}&Instrucciones aisladas con declaraciones.\\\hline
+\end{tabularx}
+\textbf{Adaptador de inicio:} JFLAP 7.1 conserva $S$ al abrir estos XML. En las copias para instrucciones se reemplaza solo $S\to bpDLe$ por $S\to I$. El subárbol desde $I$ conserva las producciones del informe. No se agrega $S\to I$ a la gramática principal de programas.
+
+Para reproducir la asignación: abrir \cod{gramatica\_base\_instrucciones.jff}, elegir \textbf{Input $\to$ Brute Force Parse}, ingresar \cod{i=i+i\#}, iniciar el análisis y avanzar hasta completar el árbol. Para la salida usar \cod{si\#}; para la declaración abrir la copia extendida e ingresar \cod{ti\#}. El TSV \cod{entradas\_jflap.tsv} conserva la entrada codificada de cada caso.
+
+\subtitulo{Comprobaciones realizadas}
+El corpus incluye 82 casos: 43 aceptados y 39 rechazados. Diez rechazos son léxicos; las 72 entradas restantes se contrastaron con JFLAP. La vacía se rechaza porque no hay reglas que generen $\varepsilon$. Se comprueban los cuatro XML, cada producción aplicada, el orden de sustitución por la izquierda y la coincidencia entre hojas y tokens. También se obtuvieron tres árboles con el \cod{BruteParser} original.
+
+El script Java elimina producciones unitarias y convierte a forma normal de Chomsky \emph{en memoria}, con los convertidores de JFLAP, antes de ejecutar su CYK. Los \cod{.jff} conservan las reglas originales; sus árboles no se sustituyen por los de la forma normal. Las vistas se renderizaron desde componentes originales de JFLAP con los archivos reabiertos. Las pruebas verifican los casos ensayados; la explicación de las producciones justifica el comportamiento general.
+
+\clearpage
+\section{Vistas de las gramáticas en JFLAP}
+\begin{figure}[H]\centering
+\includegraphics[width=0.76\linewidth,height=0.82\textheight,keepaspectratio]{\raiz evidencias/jflap/base.png}
+\caption{Tabla original de JFLAP 7.1 al abrir \cod{gramatica\_base.jff}, con las 19 alternativas del informe.}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.76\linewidth,height=0.86\textheight,keepaspectratio]{\raiz evidencias/jflap/extendida.png}
+\caption{Tabla original de \cod{gramatica\_extendida.jff}: se añaden $I\to J$, $J\to TD\#$ y dos alternativas de $T$.}
+\end{figure}
+
+\clearpage
+\section{Árboles obtenidos con el analizador original de JFLAP}
+\begin{figure}[H]\centering
+\includegraphics[width=\linewidth,height=0.44\textheight,keepaspectratio]{\raiz evidencias/jflap/derivacion_1.png}
+\caption{Árbol de \cod{i=i+i\#}, correspondiente a \cod{z = x + y \#}. $S\to I$ es el adaptador de la copia para instrucciones. Los nodos amarillos son terminales; los verdes, no terminales.}
+\end{figure}
+\begin{figure}[H]\centering
+\includegraphics[width=0.70\linewidth,height=0.29\textheight,keepaspectratio]{\raiz evidencias/jflap/derivacion_2.png}
+\caption{Árbol de \cod{si\#}: salida de un identificador, con el lexema \cod{z} en la cadena solicitada.}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.83\linewidth,height=0.50\textheight,keepaspectratio]{\raiz evidencias/jflap/derivacion_3.png}
+\caption{Árbol de \cod{ti\#} con la gramática extendida: declaración \cod{entero contador \#}.}
+\end{figure}
+\subtitulo{Fuentes de la actividad}
+El desarrollo sigue el enunciado \emph{Laboratorio 3 Diseño y Validación de Gramáticas}, la \emph{Rúbrica de evaluación del Laboratorio 3} y la plantilla \emph{Formato Informe LAB 3}, proporcionados para INFO1148. Se conserva la división de las cuatro preguntas, la extensión creativa y la numeración solicitada. Las dos copias recibidas de la rúbrica tienen el mismo contenido.
+\end{document}

@@ -1,0 +1,164 @@
+{
+  "fuente": "z = x + y #",
+  "inicio": "I",
+  "extendida": false,
+  "codigo_jflap": "i=i+i#",
+  "arbol": {
+    "simbolo": "I",
+    "hijos": [
+      {
+        "simbolo": "A",
+        "hijos": [
+          {
+            "simbolo": "R",
+            "hijos": [
+              {
+                "simbolo": "D",
+                "hijos": [
+                  {
+                    "simbolo": "i",
+                    "lexema": "z"
+                  }
+                ]
+              },
+              {
+                "simbolo": "=",
+                "lexema": "="
+              },
+              {
+                "simbolo": "V",
+                "hijos": [
+                  {
+                    "simbolo": "D",
+                    "hijos": [
+                      {
+                        "simbolo": "i",
+                        "lexema": "x"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "simbolo": "F",
+                "hijos": [
+                  {
+                    "simbolo": "+",
+                    "lexema": "+"
+                  }
+                ]
+              },
+              {
+                "simbolo": "V",
+                "hijos": [
+                  {
+                    "simbolo": "D",
+                    "hijos": [
+                      {
+                        "simbolo": "i",
+                        "lexema": "y"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "simbolo": "#",
+                "lexema": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "pasos": [
+    {
+      "forma_codificada": "I",
+      "forma_tokens": "<instruccion>",
+      "forma_lexemas": "<instruccion>",
+      "produccion": null
+    },
+    {
+      "forma_codificada": "A",
+      "forma_tokens": "<asignacion>",
+      "forma_lexemas": "<asignacion>",
+      "produccion": [
+        "I",
+        "A"
+      ]
+    },
+    {
+      "forma_codificada": "R",
+      "forma_tokens": "<asignacion_aritmetica>",
+      "forma_lexemas": "<asignacion_aritmetica>",
+      "produccion": [
+        "A",
+        "R"
+      ]
+    },
+    {
+      "forma_codificada": "D=VFV#",
+      "forma_tokens": "<identificador> = <operando> <operador> <operando> #",
+      "forma_lexemas": "<identificador> = <operando> <operador> <operando> #",
+      "produccion": [
+        "R",
+        "D=VFV#"
+      ]
+    },
+    {
+      "forma_codificada": "i=VFV#",
+      "forma_tokens": "ID = <operando> <operador> <operando> #",
+      "forma_lexemas": "z = <operando> <operador> <operando> #",
+      "produccion": [
+        "D",
+        "i"
+      ]
+    },
+    {
+      "forma_codificada": "i=DFV#",
+      "forma_tokens": "ID = <identificador> <operador> <operando> #",
+      "forma_lexemas": "z = <identificador> <operador> <operando> #",
+      "produccion": [
+        "V",
+        "D"
+      ]
+    },
+    {
+      "forma_codificada": "i=iFV#",
+      "forma_tokens": "ID = ID <operador> <operando> #",
+      "forma_lexemas": "z = x <operador> <operando> #",
+      "produccion": [
+        "D",
+        "i"
+      ]
+    },
+    {
+      "forma_codificada": "i=i+V#",
+      "forma_tokens": "ID = ID + <operando> #",
+      "forma_lexemas": "z = x + <operando> #",
+      "produccion": [
+        "F",
+        "+"
+      ]
+    },
+    {
+      "forma_codificada": "i=i+D#",
+      "forma_tokens": "ID = ID + <identificador> #",
+      "forma_lexemas": "z = x + <identificador> #",
+      "produccion": [
+        "V",
+        "D"
+      ]
+    },
+    {
+      "forma_codificada": "i=i+i#",
+      "forma_tokens": "ID = ID + ID #",
+      "forma_lexemas": "z = x + y #",
+      "produccion": [
+        "D",
+        "i"
+      ]
+    }
+  ]
+}

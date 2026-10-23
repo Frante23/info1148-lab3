@@ -1,0 +1,22 @@
+{
+  "casos": 82,
+  "aceptadas": 43,
+  "rechazadas": 39,
+  "errores_lexicos": 10,
+  "casos_sintacticos_jflap": 72,
+  "programa_referencia": {
+    "instrucciones": 20,
+    "asignaciones": 13,
+    "simples": 6,
+    "aritmeticas": 7,
+    "salidas": 7
+  },
+  "gramatica_base": {
+    "variables": 11,
+    "producciones": 19
+  },
+  "gramatica_extendida": {
+    "variables": 13,
+    "producciones": 23
+  }
+}

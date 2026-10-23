@@ -1,0 +1,129 @@
+id,grupo,inicio,extendida,fuente,codigo_jflap,esperado,aceptada,tipo_error,tokens
+P4_1,pregunta_4,I,False,x = 10 #,i=n#,True,True,,4
+P4_2,pregunta_4,I,False,z = x + y #,i=i+i#,True,True,,6
+P4_3,pregunta_4,I,False,salida z #,si#,True,True,,3
+P4_4,pregunta_4,I,False,x 10 #,in#,False,False,sintáctico,3
+P4_5,pregunta_4,I,False,z = + x y #,i=+ii#,False,False,sintáctico,6
+P4_6,pregunta_4,I,False,salida #,s#,False,False,sintáctico,2
+P4_7,pregunta_4,I,False,x = 20,i=n,False,False,sintáctico,3
+P4_8,pregunta_4,S,False,"Begin
+Programa prueba
+x = 5 #
+salida x #
+End",bpii=n#si#e,True,True,,11
+P3_1,pregunta_3,I,False,x = 20 #,i=n#,True,True,,4
+P3_2,pregunta_3,I,False,z = x * y #,i=i*i#,True,True,,6
+P3_3,pregunta_3,I,False,salida temporal #,si#,True,True,,3
+REF,referencia,S,False,"Begin
+Programa operativo_01_02
+
+x = 1.345 #
+y = 20 #
+
+/* operaciones y salidas */
+
+z = x + y #
+z2 = x + y #
+h = z - x #
+h2 = z - x #
+k = h * y #
+t = k / z #
+m = k % 10 #
+
+salida z #
+salida h #
+salida k #
+salida t #
+salida m #
+
+temporal = 0 #
+temporal = x #
+x = y #
+y = temporal #
+
+salida x #
+salida y #
+
+End
+",bpii=n#i=n#i=i+i#i=i+i#i=i-i#i=i-i#i=i*i#i=i/i#i=i%n#si#si#si#si#si#i=n#i=i#i=i#i=i#si#si#e,True,True,,91
+EXT_V,extension,I,True,entero contador #,ti#,True,True,,3
+EXT_I,extension,I,True,entero #,t#,False,False,sintáctico,2
+EXT_PROG,extension,S,True,"Begin
+Programa ejemplo_tipos
+entero contador #
+real temperatura #
+contador = 0 #
+temperatura = 1.345 #
+contador = contador + 1 #
+salida contador #
+salida temperatura #
+End
+",bpiti#ri#i=n#i=n#i=i+n#si#si#e,True,True,,30
+ID_LARGO,adicional,I,False,operativo_01_02 = z2 #,i=i#,True,True,,4
+ID_MAYUSCULA,adicional,I,False,Variable_A2 = temporal #,i=i#,True,True,,4
+ID_GUION_INICIAL,adicional,I,False,_x = 1 #,,False,False,Carácter no admitido '_' en 1:1.,0
+ID_DIGITO_INICIAL,adicional,I,False,2x = 1 #,,False,False,Número o identificador mal formado en 1:1.,0
+RESERVADA_ID,adicional,I,False,salida = 1 #,s=n#,False,False,sintáctico,4
+ID_PREFIJO_RESERVADO,adicional,I,False,salida2 = 1 #,i=n#,True,True,,4
+NUM_CERO,adicional,I,False,x = 0 #,i=n#,True,True,,4
+NUM_REAL,adicional,I,False,x = 1.345 #,i=n#,True,True,,4
+NUM_CEROS,adicional,I,False,x = 00.50 #,i=n#,True,True,,4
+NUM_NEGATIVO,adicional,I,False,x = -1 #,i=-n#,False,False,sintáctico,5
+NUM_PUNTO_FINAL,adicional,I,False,x = 1. #,,False,False,Número o identificador mal formado en 1:5.,0
+NUM_PUNTO_INICIAL,adicional,I,False,x = .5 #,,False,False,Carácter no admitido '.' en 1:5.,0
+NUM_EXPONENTE,adicional,I,False,x = 2e3 #,,False,False,Número o identificador mal formado en 1:5.,0
+NUM_DOBLE_PUNTO,adicional,I,False,x = 1.2.3 #,,False,False,Número o identificador mal formado en 1:5.,0
+SALIDA_NUMERO,adicional,I,False,salida 20 #,sn#,False,False,sintáctico,3
+INSTRUCCION_VACIA,adicional,I,False,,,False,False,sintáctico,0
+DOBLE_TERMINADOR,adicional,I,False,x = 1 ##,i=n##,False,False,sintáctico,5
+ASIG_SIN_VALOR,adicional,I,False,x = #,i=#,False,False,sintáctico,3
+DOS_OPERADORES,adicional,I,False,x = y + z * t #,i=i+i*i#,False,False,sintáctico,8
+SIN_OPERADOR,adicional,I,False,x = y z #,i=ii#,False,False,sintáctico,5
+COMENTARIO,adicional,I,False,x /* comentario */ = 1 #,i=n#,True,True,,4
+COMENTARIO_MULTILINEA,adicional,I,False,"x = 1 # /* a
+b */",i=n#,True,True,,4
+COMENTARIO_SIN_CIERRE,adicional,I,False,x = 1 # /* comentario,,False,False,Comentario sin cierre en 1:9.,0
+COMENTARIO_ANIDADO,adicional,I,False,/* exterior /* interior */ */ x = 1 #,,False,False,Comentario anidado no admitido en 1:1.,0
+NO_PEGAR_ID,adicional,I,False,x y = 1 #,ii=n#,False,False,sintáctico,5
+DOS_ID_POR_COMENTARIO,adicional,I,False,x/* c */y = 1 #,ii=n#,False,False,sintáctico,5
+CARACTER_AJENO,adicional,I,False,x = @ #,,False,False,Carácter no admitido '@' en 1:5.,0
+PARENTESIS,adicional,I,False,x = ( y + z ) #,,False,False,Carácter no admitido '(' en 1:5.,0
+OP_43_x_y,operadores,I,False,z = x + y #,i=i+i#,True,True,,6
+OP_43_x_2.5,operadores,I,False,z = x + 2.5 #,i=i+n#,True,True,,6
+OP_43_10_y,operadores,I,False,z = 10 + y #,i=n+i#,True,True,,6
+OP_43_10_2.5,operadores,I,False,z = 10 + 2.5 #,i=n+n#,True,True,,6
+OP_45_x_y,operadores,I,False,z = x - y #,i=i-i#,True,True,,6
+OP_45_x_2.5,operadores,I,False,z = x - 2.5 #,i=i-n#,True,True,,6
+OP_45_10_y,operadores,I,False,z = 10 - y #,i=n-i#,True,True,,6
+OP_45_10_2.5,operadores,I,False,z = 10 - 2.5 #,i=n-n#,True,True,,6
+OP_42_x_y,operadores,I,False,z = x * y #,i=i*i#,True,True,,6
+OP_42_x_2.5,operadores,I,False,z = x * 2.5 #,i=i*n#,True,True,,6
+OP_42_10_y,operadores,I,False,z = 10 * y #,i=n*i#,True,True,,6
+OP_42_10_2.5,operadores,I,False,z = 10 * 2.5 #,i=n*n#,True,True,,6
+OP_47_x_y,operadores,I,False,z = x / y #,i=i/i#,True,True,,6
+OP_47_x_2.5,operadores,I,False,z = x / 2.5 #,i=i/n#,True,True,,6
+OP_47_10_y,operadores,I,False,z = 10 / y #,i=n/i#,True,True,,6
+OP_47_10_2.5,operadores,I,False,z = 10 / 2.5 #,i=n/n#,True,True,,6
+OP_37_x_y,operadores,I,False,z = x % y #,i=i%i#,True,True,,6
+OP_37_x_2.5,operadores,I,False,z = x % 2.5 #,i=i%n#,True,True,,6
+OP_37_10_y,operadores,I,False,z = 10 % y #,i=n%i#,True,True,,6
+OP_37_10_2.5,operadores,I,False,z = 10 % 2.5 #,i=n%n#,True,True,,6
+PROG_MINIMO,contexto,S,False,Begin Programa a x = 0 # End,bpii=n#e,True,True,,8
+PROG_SOLO_SALIDA,contexto,S,False,Begin Programa a salida x # End,bpisi#e,True,True,,7
+PROG_VACIO,contexto,S,False,Begin Programa a End,bpie,False,False,sintáctico,4
+PROG_SIN_NOMBRE,contexto,S,False,Begin Programa x = 1 # End,bpi=n#e,False,False,sintáctico,7
+PROG_SIN_END,contexto,S,False,Begin Programa a x = 1 #,bpii=n#,False,False,sintáctico,7
+PROG_END_EXTRA,contexto,S,False,Begin Programa a x = 1 # End End,bpii=n#ee,False,False,sintáctico,9
+PROG_MINUSCULA,contexto,S,False,begin Programa a x = 1 # End,ipii=n#e,False,False,sintáctico,8
+P4_8_BARRAS_LITERALES,contexto,S,False,Begin / Programa prueba / x = 5 # / salida x # / End,b/pi/i=n#/si#/e,False,False,sintáctico,15
+INSTRUCCION_NO_PROGRAMA,contexto,S,False,x = 10 #,i=n#,False,False,sintáctico,4
+PROGRAMA_NO_INSTRUCCION,contexto,I,False,Begin Programa a x = 1 # End,bpii=n#e,False,False,sintáctico,8
+EXT_REAL,extension_adicional,I,True,real temperatura #,ri#,True,True,,3
+EXT_ID_TIPO,extension_adicional,I,True,entero real #,tr#,False,False,sintáctico,3
+EXT_SIN_TERMINADOR,extension_adicional,I,True,entero contador,ti,False,False,sintáctico,2
+EXT_CON_INICIALIZACION,extension_adicional,I,True,entero contador = 0 #,ti=n#,False,False,sintáctico,5
+EXT_TIPO_DISTINTO,extension_adicional,I,True,cadena texto #,ii#,False,False,sintáctico,3
+EXT_CONSERVA_ASIG,extension_adicional,I,True,x = y + 1 #,i=i+n#,True,True,,6
+EXT_CONSERVA_SALIDA,extension_adicional,I,True,salida x #,si#,True,True,,3
+EXT_TIPO_EN_MAYUSCULA,extension_adicional,I,True,Entero contador #,ii#,False,False,sintáctico,3
+BASE_NO_DECLARA,extension_adicional,I,False,entero contador #,ii#,False,False,sintáctico,3
