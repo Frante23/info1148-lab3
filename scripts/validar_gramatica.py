@@ -95,6 +95,30 @@ def main():
     counts = count(ref_tree)
     assert counts["I"] == 20 and counts["A"] == 13 and counts["O"] == 7
     assert counts["C"] == 6 and counts["R"] == 7
+    # Evidencia íntegra del programa: no se sustituye el resto por puntos suspensivos.
+    ref_case, ref_tokens, ref_tree = by_id["REF"]
+    ref_steps = derivacion_izquierda(ref_tree)
+    full_derivation = [
+        "Derivación completa por la izquierda del programa de referencia",
+        "Inicio: S (<programa>). Los identificadores y números muestran sus lexemas.",
+        "Cada paso sustituye el primer no terminal de la forma sentencial anterior.",
+        "Las reglas se muestran con los códigos de JFLAP definidos en el informe.",
+        "",
+    ]
+    for idx, (frontier, rule) in enumerate(ref_steps):
+        label = "Inicio" if rule is None else f"{rule[0]} -> {rule[1]}"
+        full_derivation.append(f"{idx:03d} | {label} | {representar(frontier, lexemas=True)}")
+    assert all(n.token is not None for n in ref_steps[-1][0])
+    assert tuple(n.token for n in ref_steps[-1][0]) == ref_tokens
+    products["evidencias/derivaciones/programa_referencia.txt"] = "\n".join(full_derivation) + "\n"
+    products["evidencias/derivaciones/programa_referencia.json"] = json.dumps({
+        "inicio": "S", "extendida": False,
+        "codigo_jflap": "".join(t.codigo for t in ref_tokens),
+        "cantidad_aplicaciones": len(ref_steps) - 1,
+        "tokens": [{"tipo": TERMINALES[t.codigo], "lexema": t.lexema,
+                    "linea": t.linea, "columna": t.columna} for t in ref_tokens],
+        "arbol": ref_tree.to_dict(),
+    }, ensure_ascii=False, indent=2) + "\n"
     for name, case_id, ext in [("asignacion", "P4_2", False), ("salida", "P4_3", False),
                                ("declaracion", "EXT_V", True)]:
         case, tokens, tree = by_id[case_id]

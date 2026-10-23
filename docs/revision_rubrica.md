@@ -6,9 +6,9 @@ La comprobación de abajo indica dónde se desarrolla cada exigencia. No es una 
 |---|---|---|
 | Terminales clasificados, no terminales, inicio y G=(V,Σ,P,S), 20 puntos | 2.1 a–e | Especificación y reglas léxicas de `scripts/gramatica.py` |
 | Explicar por qué no enumerar identificadores y números | 2.1 e | Patrones, reservadas, valores nuevos, casos de límites |
-| Encabezado, asignaciones simples y aritméticas, salida, cinco operadores, una o más instrucciones, 30 puntos | 2.2 a–b | 19 alternativas base; JFF base; pruebas de los 5 operadores |
+| Encabezado, asignaciones simples y aritméticas, salida, cinco operadores, una o más instrucciones, 30 puntos | 2.2 a–b y justificación de la construcción | 19 alternativas base; explicación inductiva de la lista; comparación de tres formas de instrucción; restricciones de cada regla |
 | Función de cada no terminal | 2.2 b | Tabla individual de los 11 no terminales |
-| Programa de referencia completo | 2.2 c | Caso REF; 20 instrucciones, 6 simples, 7 aritméticas y 7 salidas |
+| Programa de referencia completo | 2.2 c | Caso REF; derivación íntegra y árbol en evidencias/derivaciones/programa_referencia; 20 instrucciones, 6 simples, 7 aritméticas y 7 salidas |
 | Derivaciones por la izquierda, 25 puntos | 2.3 a–b | JSON y tablas generadas; cada sustitución se verifica |
 | Árbol de `z = x + y #` y relación entre nodos | 2.3 c–d | Árbol anotado, SVG y árbol del BruteParser original |
 | Tres cadenas adicionales | 2.3 e | P3_1 a P3_3, aceptadas y justificadas |

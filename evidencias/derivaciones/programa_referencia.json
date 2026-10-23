@@ -1,0 +1,1628 @@
+{
+  "inicio": "S",
+  "extendida": false,
+  "codigo_jflap": "bpii=n#i=n#i=i+i#i=i+i#i=i-i#i=i-i#i=i*i#i=i/i#i=i%n#si#si#si#si#si#i=n#i=i#i=i#i=i#si#si#e",
+  "cantidad_aplicaciones": 142,
+  "tokens": [
+    {
+      "tipo": "Begin",
+      "lexema": "Begin",
+      "linea": 1,
+      "columna": 1
+    },
+    {
+      "tipo": "Programa",
+      "lexema": "Programa",
+      "linea": 2,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "operativo_01_02",
+      "linea": 2,
+      "columna": 10
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 4,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 4,
+      "columna": 3
+    },
+    {
+      "tipo": "NUM",
+      "lexema": "1.345",
+      "linea": 4,
+      "columna": 5
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 4,
+      "columna": 11
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 5,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 5,
+      "columna": 3
+    },
+    {
+      "tipo": "NUM",
+      "lexema": "20",
+      "linea": 5,
+      "columna": 5
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 5,
+      "columna": 8
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z",
+      "linea": 9,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 9,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 9,
+      "columna": 5
+    },
+    {
+      "tipo": "+",
+      "lexema": "+",
+      "linea": 9,
+      "columna": 7
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 9,
+      "columna": 9
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 9,
+      "columna": 11
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z2",
+      "linea": 10,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 10,
+      "columna": 4
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 10,
+      "columna": 6
+    },
+    {
+      "tipo": "+",
+      "lexema": "+",
+      "linea": 10,
+      "columna": 8
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 10,
+      "columna": 10
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 10,
+      "columna": 12
+    },
+    {
+      "tipo": "ID",
+      "lexema": "h",
+      "linea": 11,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 11,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z",
+      "linea": 11,
+      "columna": 5
+    },
+    {
+      "tipo": "-",
+      "lexema": "-",
+      "linea": 11,
+      "columna": 7
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 11,
+      "columna": 9
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 11,
+      "columna": 11
+    },
+    {
+      "tipo": "ID",
+      "lexema": "h2",
+      "linea": 12,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 12,
+      "columna": 4
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z",
+      "linea": 12,
+      "columna": 6
+    },
+    {
+      "tipo": "-",
+      "lexema": "-",
+      "linea": 12,
+      "columna": 8
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 12,
+      "columna": 10
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 12,
+      "columna": 12
+    },
+    {
+      "tipo": "ID",
+      "lexema": "k",
+      "linea": 13,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 13,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "h",
+      "linea": 13,
+      "columna": 5
+    },
+    {
+      "tipo": "*",
+      "lexema": "*",
+      "linea": 13,
+      "columna": 7
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 13,
+      "columna": 9
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 13,
+      "columna": 11
+    },
+    {
+      "tipo": "ID",
+      "lexema": "t",
+      "linea": 14,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 14,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "k",
+      "linea": 14,
+      "columna": 5
+    },
+    {
+      "tipo": "/",
+      "lexema": "/",
+      "linea": 14,
+      "columna": 7
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z",
+      "linea": 14,
+      "columna": 9
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 14,
+      "columna": 11
+    },
+    {
+      "tipo": "ID",
+      "lexema": "m",
+      "linea": 15,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 15,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "k",
+      "linea": 15,
+      "columna": 5
+    },
+    {
+      "tipo": "%",
+      "lexema": "%",
+      "linea": 15,
+      "columna": 7
+    },
+    {
+      "tipo": "NUM",
+      "lexema": "10",
+      "linea": 15,
+      "columna": 9
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 15,
+      "columna": 12
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 17,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "z",
+      "linea": 17,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 17,
+      "columna": 10
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 18,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "h",
+      "linea": 18,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 18,
+      "columna": 10
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 19,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "k",
+      "linea": 19,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 19,
+      "columna": 10
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 20,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "t",
+      "linea": 20,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 20,
+      "columna": 10
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 21,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "m",
+      "linea": 21,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 21,
+      "columna": 10
+    },
+    {
+      "tipo": "ID",
+      "lexema": "temporal",
+      "linea": 23,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 23,
+      "columna": 10
+    },
+    {
+      "tipo": "NUM",
+      "lexema": "0",
+      "linea": 23,
+      "columna": 12
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 23,
+      "columna": 14
+    },
+    {
+      "tipo": "ID",
+      "lexema": "temporal",
+      "linea": 24,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 24,
+      "columna": 10
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 24,
+      "columna": 12
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 24,
+      "columna": 14
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 25,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 25,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 25,
+      "columna": 5
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 25,
+      "columna": 7
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 26,
+      "columna": 1
+    },
+    {
+      "tipo": "=",
+      "lexema": "=",
+      "linea": 26,
+      "columna": 3
+    },
+    {
+      "tipo": "ID",
+      "lexema": "temporal",
+      "linea": 26,
+      "columna": 5
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 26,
+      "columna": 14
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 28,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "x",
+      "linea": 28,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 28,
+      "columna": 10
+    },
+    {
+      "tipo": "salida",
+      "lexema": "salida",
+      "linea": 29,
+      "columna": 1
+    },
+    {
+      "tipo": "ID",
+      "lexema": "y",
+      "linea": 29,
+      "columna": 8
+    },
+    {
+      "tipo": "#",
+      "lexema": "#",
+      "linea": 29,
+      "columna": 10
+    },
+    {
+      "tipo": "End",
+      "lexema": "End",
+      "linea": 31,
+      "columna": 1
+    }
+  ],
+  "arbol": {
+    "simbolo": "S",
+    "hijos": [
+      {
+        "simbolo": "b",
+        "lexema": "Begin"
+      },
+      {
+        "simbolo": "p",
+        "lexema": "Programa"
+      },
+      {
+        "simbolo": "D",
+        "hijos": [
+          {
+            "simbolo": "i",
+            "lexema": "operativo_01_02"
+          }
+        ]
+      },
+      {
+        "simbolo": "L",
+        "hijos": [
+          {
+            "simbolo": "I",
+            "hijos": [
+              {
+                "simbolo": "A",
+                "hijos": [
+                  {
+                    "simbolo": "C",
+                    "hijos": [
+                      {
+                        "simbolo": "D",
+                        "hijos": [
+                          {
+                            "simbolo": "i",
+                            "lexema": "x"
+                          }
+                        ]
+                      },
+                      {
+                        "simbolo": "=",
+                        "lexema": "="
+                      },
+                      {
+                        "simbolo": "V",
+                        "hijos": [
+                          {
+                            "simbolo": "N",
+                            "hijos": [
+                              {
+                                "simbolo": "n",
+                                "lexema": "1.345"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "simbolo": "#",
+                        "lexema": "#"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "simbolo": "L",
+            "hijos": [
+              {
+                "simbolo": "I",
+                "hijos": [
+                  {
+                    "simbolo": "A",
+                    "hijos": [
+                      {
+                        "simbolo": "C",
+                        "hijos": [
+                          {
+                            "simbolo": "D",
+                            "hijos": [
+                              {
+                                "simbolo": "i",
+                                "lexema": "y"
+                              }
+                            ]
+                          },
+                          {
+                            "simbolo": "=",
+                            "lexema": "="
+                          },
+                          {
+                            "simbolo": "V",
+                            "hijos": [
+                              {
+                                "simbolo": "N",
+                                "hijos": [
+                                  {
+                                    "simbolo": "n",
+                                    "lexema": "20"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "simbolo": "#",
+                            "lexema": "#"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "simbolo": "L",
+                "hijos": [
+                  {
+                    "simbolo": "I",
+                    "hijos": [
+                      {
+                        "simbolo": "A",
+                        "hijos": [
+                          {
+                            "simbolo": "R",
+                            "hijos": [
+                              {
+                                "simbolo": "D",
+                                "hijos": [
+                                  {
+                                    "simbolo": "i",
+                                    "lexema": "z"
+                                  }
+                                ]
+                              },
+                              {
+                                "simbolo": "=",
+                                "lexema": "="
+                              },
+                              {
+                                "simbolo": "V",
+                                "hijos": [
+                                  {
+                                    "simbolo": "D",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "i",
+                                        "lexema": "x"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "simbolo": "F",
+                                "hijos": [
+                                  {
+                                    "simbolo": "+",
+                                    "lexema": "+"
+                                  }
+                                ]
+                              },
+                              {
+                                "simbolo": "V",
+                                "hijos": [
+                                  {
+                                    "simbolo": "D",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "i",
+                                        "lexema": "y"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "simbolo": "#",
+                                "lexema": "#"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "simbolo": "L",
+                    "hijos": [
+                      {
+                        "simbolo": "I",
+                        "hijos": [
+                          {
+                            "simbolo": "A",
+                            "hijos": [
+                              {
+                                "simbolo": "R",
+                                "hijos": [
+                                  {
+                                    "simbolo": "D",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "i",
+                                        "lexema": "z2"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "simbolo": "=",
+                                    "lexema": "="
+                                  },
+                                  {
+                                    "simbolo": "V",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "D",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "i",
+                                            "lexema": "x"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "simbolo": "F",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "+",
+                                        "lexema": "+"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "simbolo": "V",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "D",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "i",
+                                            "lexema": "y"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "simbolo": "#",
+                                    "lexema": "#"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "simbolo": "L",
+                        "hijos": [
+                          {
+                            "simbolo": "I",
+                            "hijos": [
+                              {
+                                "simbolo": "A",
+                                "hijos": [
+                                  {
+                                    "simbolo": "R",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "D",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "i",
+                                            "lexema": "h"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "simbolo": "=",
+                                        "lexema": "="
+                                      },
+                                      {
+                                        "simbolo": "V",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "D",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "i",
+                                                "lexema": "z"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "simbolo": "F",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "-",
+                                            "lexema": "-"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "simbolo": "V",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "D",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "i",
+                                                "lexema": "x"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "simbolo": "#",
+                                        "lexema": "#"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "simbolo": "L",
+                            "hijos": [
+                              {
+                                "simbolo": "I",
+                                "hijos": [
+                                  {
+                                    "simbolo": "A",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "R",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "D",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "i",
+                                                "lexema": "h2"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "simbolo": "=",
+                                            "lexema": "="
+                                          },
+                                          {
+                                            "simbolo": "V",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "D",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "i",
+                                                    "lexema": "z"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "simbolo": "F",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "-",
+                                                "lexema": "-"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "simbolo": "V",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "D",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "i",
+                                                    "lexema": "x"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "simbolo": "#",
+                                            "lexema": "#"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "simbolo": "L",
+                                "hijos": [
+                                  {
+                                    "simbolo": "I",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "A",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "R",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "D",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "i",
+                                                    "lexema": "k"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "simbolo": "=",
+                                                "lexema": "="
+                                              },
+                                              {
+                                                "simbolo": "V",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "D",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "i",
+                                                        "lexema": "h"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "simbolo": "F",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "*",
+                                                    "lexema": "*"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "simbolo": "V",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "D",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "i",
+                                                        "lexema": "y"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "simbolo": "#",
+                                                "lexema": "#"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "simbolo": "L",
+                                    "hijos": [
+                                      {
+                                        "simbolo": "I",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "A",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "R",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "D",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "i",
+                                                        "lexema": "t"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "simbolo": "=",
+                                                    "lexema": "="
+                                                  },
+                                                  {
+                                                    "simbolo": "V",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "D",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "i",
+                                                            "lexema": "k"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "simbolo": "F",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "/",
+                                                        "lexema": "/"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "simbolo": "V",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "D",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "i",
+                                                            "lexema": "z"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "simbolo": "#",
+                                                    "lexema": "#"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "simbolo": "L",
+                                        "hijos": [
+                                          {
+                                            "simbolo": "I",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "A",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "R",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "D",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "i",
+                                                            "lexema": "m"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "=",
+                                                        "lexema": "="
+                                                      },
+                                                      {
+                                                        "simbolo": "V",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "D",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "i",
+                                                                "lexema": "k"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "F",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "%",
+                                                            "lexema": "%"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "V",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "N",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "n",
+                                                                "lexema": "10"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "#",
+                                                        "lexema": "#"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "simbolo": "L",
+                                            "hijos": [
+                                              {
+                                                "simbolo": "I",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "O",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "s",
+                                                        "lexema": "salida"
+                                                      },
+                                                      {
+                                                        "simbolo": "D",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "i",
+                                                            "lexema": "z"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "#",
+                                                        "lexema": "#"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "simbolo": "L",
+                                                "hijos": [
+                                                  {
+                                                    "simbolo": "I",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "O",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "s",
+                                                            "lexema": "salida"
+                                                          },
+                                                          {
+                                                            "simbolo": "D",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "i",
+                                                                "lexema": "h"
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "simbolo": "#",
+                                                            "lexema": "#"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "simbolo": "L",
+                                                    "hijos": [
+                                                      {
+                                                        "simbolo": "I",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "O",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "s",
+                                                                "lexema": "salida"
+                                                              },
+                                                              {
+                                                                "simbolo": "D",
+                                                                "hijos": [
+                                                                  {
+                                                                    "simbolo": "i",
+                                                                    "lexema": "k"
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "simbolo": "#",
+                                                                "lexema": "#"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "simbolo": "L",
+                                                        "hijos": [
+                                                          {
+                                                            "simbolo": "I",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "O",
+                                                                "hijos": [
+                                                                  {
+                                                                    "simbolo": "s",
+                                                                    "lexema": "salida"
+                                                                  },
+                                                                  {
+                                                                    "simbolo": "D",
+                                                                    "hijos": [
+                                                                      {
+                                                                        "simbolo": "i",
+                                                                        "lexema": "t"
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "simbolo": "#",
+                                                                    "lexema": "#"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "simbolo": "L",
+                                                            "hijos": [
+                                                              {
+                                                                "simbolo": "I",
+                                                                "hijos": [
+                                                                  {
+                                                                    "simbolo": "O",
+                                                                    "hijos": [
+                                                                      {
+                                                                        "simbolo": "s",
+                                                                        "lexema": "salida"
+                                                                      },
+                                                                      {
+                                                                        "simbolo": "D",
+                                                                        "hijos": [
+                                                                          {
+                                                                            "simbolo": "i",
+                                                                            "lexema": "m"
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "simbolo": "#",
+                                                                        "lexema": "#"
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "simbolo": "L",
+                                                                "hijos": [
+                                                                  {
+                                                                    "simbolo": "I",
+                                                                    "hijos": [
+                                                                      {
+                                                                        "simbolo": "A",
+                                                                        "hijos": [
+                                                                          {
+                                                                            "simbolo": "C",
+                                                                            "hijos": [
+                                                                              {
+                                                                                "simbolo": "D",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "i",
+                                                                                    "lexema": "temporal"
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "simbolo": "=",
+                                                                                "lexema": "="
+                                                                              },
+                                                                              {
+                                                                                "simbolo": "V",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "N",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "n",
+                                                                                        "lexema": "0"
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "simbolo": "#",
+                                                                                "lexema": "#"
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "simbolo": "L",
+                                                                    "hijos": [
+                                                                      {
+                                                                        "simbolo": "I",
+                                                                        "hijos": [
+                                                                          {
+                                                                            "simbolo": "A",
+                                                                            "hijos": [
+                                                                              {
+                                                                                "simbolo": "C",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "D",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "i",
+                                                                                        "lexema": "temporal"
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "simbolo": "=",
+                                                                                    "lexema": "="
+                                                                                  },
+                                                                                  {
+                                                                                    "simbolo": "V",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "D",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "i",
+                                                                                            "lexema": "x"
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "simbolo": "#",
+                                                                                    "lexema": "#"
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "simbolo": "L",
+                                                                        "hijos": [
+                                                                          {
+                                                                            "simbolo": "I",
+                                                                            "hijos": [
+                                                                              {
+                                                                                "simbolo": "A",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "C",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "D",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "i",
+                                                                                            "lexema": "x"
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "simbolo": "=",
+                                                                                        "lexema": "="
+                                                                                      },
+                                                                                      {
+                                                                                        "simbolo": "V",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "D",
+                                                                                            "hijos": [
+                                                                                              {
+                                                                                                "simbolo": "i",
+                                                                                                "lexema": "y"
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "simbolo": "#",
+                                                                                        "lexema": "#"
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "simbolo": "L",
+                                                                            "hijos": [
+                                                                              {
+                                                                                "simbolo": "I",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "A",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "C",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "D",
+                                                                                            "hijos": [
+                                                                                              {
+                                                                                                "simbolo": "i",
+                                                                                                "lexema": "y"
+                                                                                              }
+                                                                                            ]
+                                                                                          },
+                                                                                          {
+                                                                                            "simbolo": "=",
+                                                                                            "lexema": "="
+                                                                                          },
+                                                                                          {
+                                                                                            "simbolo": "V",
+                                                                                            "hijos": [
+                                                                                              {
+                                                                                                "simbolo": "D",
+                                                                                                "hijos": [
+                                                                                                  {
+                                                                                                    "simbolo": "i",
+                                                                                                    "lexema": "temporal"
+                                                                                                  }
+                                                                                                ]
+                                                                                              }
+                                                                                            ]
+                                                                                          },
+                                                                                          {
+                                                                                            "simbolo": "#",
+                                                                                            "lexema": "#"
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "simbolo": "L",
+                                                                                "hijos": [
+                                                                                  {
+                                                                                    "simbolo": "I",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "O",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "s",
+                                                                                            "lexema": "salida"
+                                                                                          },
+                                                                                          {
+                                                                                            "simbolo": "D",
+                                                                                            "hijos": [
+                                                                                              {
+                                                                                                "simbolo": "i",
+                                                                                                "lexema": "x"
+                                                                                              }
+                                                                                            ]
+                                                                                          },
+                                                                                          {
+                                                                                            "simbolo": "#",
+                                                                                            "lexema": "#"
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "simbolo": "L",
+                                                                                    "hijos": [
+                                                                                      {
+                                                                                        "simbolo": "I",
+                                                                                        "hijos": [
+                                                                                          {
+                                                                                            "simbolo": "O",
+                                                                                            "hijos": [
+                                                                                              {
+                                                                                                "simbolo": "s",
+                                                                                                "lexema": "salida"
+                                                                                              },
+                                                                                              {
+                                                                                                "simbolo": "D",
+                                                                                                "hijos": [
+                                                                                                  {
+                                                                                                    "simbolo": "i",
+                                                                                                    "lexema": "y"
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              {
+                                                                                                "simbolo": "#",
+                                                                                                "lexema": "#"
+                                                                                              }
+                                                                                            ]
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "simbolo": "e",
+        "lexema": "End"
+      }
+    ]
+  }
+}

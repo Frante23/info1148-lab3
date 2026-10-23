@@ -1,0 +1,148 @@
+Derivación completa por la izquierda del programa de referencia
+Inicio: S (<programa>). Los identificadores y números muestran sus lexemas.
+Cada paso sustituye el primer no terminal de la forma sentencial anterior.
+Las reglas se muestran con los códigos de JFLAP definidos en el informe.
+
+000 | Inicio | <programa>
+001 | S -> bpDLe | Begin Programa <identificador> <lista_instrucciones> End
+002 | D -> i | Begin Programa operativo_01_02 <lista_instrucciones> End
+003 | L -> IL | Begin Programa operativo_01_02 <instruccion> <lista_instrucciones> End
+004 | I -> A | Begin Programa operativo_01_02 <asignacion> <lista_instrucciones> End
+005 | A -> C | Begin Programa operativo_01_02 <asignacion_simple> <lista_instrucciones> End
+006 | C -> D=V# | Begin Programa operativo_01_02 <identificador> = <operando> # <lista_instrucciones> End
+007 | D -> i | Begin Programa operativo_01_02 x = <operando> # <lista_instrucciones> End
+008 | V -> N | Begin Programa operativo_01_02 x = <numero> # <lista_instrucciones> End
+009 | N -> n | Begin Programa operativo_01_02 x = 1.345 # <lista_instrucciones> End
+010 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # <instruccion> <lista_instrucciones> End
+011 | I -> A | Begin Programa operativo_01_02 x = 1.345 # <asignacion> <lista_instrucciones> End
+012 | A -> C | Begin Programa operativo_01_02 x = 1.345 # <asignacion_simple> <lista_instrucciones> End
+013 | C -> D=V# | Begin Programa operativo_01_02 x = 1.345 # <identificador> = <operando> # <lista_instrucciones> End
+014 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = <operando> # <lista_instrucciones> End
+015 | V -> N | Begin Programa operativo_01_02 x = 1.345 # y = <numero> # <lista_instrucciones> End
+016 | N -> n | Begin Programa operativo_01_02 x = 1.345 # y = 20 # <lista_instrucciones> End
+017 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # <instruccion> <lista_instrucciones> End
+018 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # <asignacion> <lista_instrucciones> End
+019 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # <asignacion_aritmetica> <lista_instrucciones> End
+020 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+021 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = <operando> <operador> <operando> # <lista_instrucciones> End
+022 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = <identificador> <operador> <operando> # <lista_instrucciones> End
+023 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x <operador> <operando> # <lista_instrucciones> End
+024 | F -> + | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + <operando> # <lista_instrucciones> End
+025 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + <identificador> # <lista_instrucciones> End
+026 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # <lista_instrucciones> End
+027 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # <instruccion> <lista_instrucciones> End
+028 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # <asignacion> <lista_instrucciones> End
+029 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # <asignacion_aritmetica> <lista_instrucciones> End
+030 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+031 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = <operando> <operador> <operando> # <lista_instrucciones> End
+032 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = <identificador> <operador> <operando> # <lista_instrucciones> End
+033 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x <operador> <operando> # <lista_instrucciones> End
+034 | F -> + | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + <operando> # <lista_instrucciones> End
+035 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + <identificador> # <lista_instrucciones> End
+036 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # <lista_instrucciones> End
+037 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # <instruccion> <lista_instrucciones> End
+038 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # <asignacion> <lista_instrucciones> End
+039 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # <asignacion_aritmetica> <lista_instrucciones> End
+040 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+041 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = <operando> <operador> <operando> # <lista_instrucciones> End
+042 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = <identificador> <operador> <operando> # <lista_instrucciones> End
+043 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z <operador> <operando> # <lista_instrucciones> End
+044 | F -> - | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - <operando> # <lista_instrucciones> End
+045 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - <identificador> # <lista_instrucciones> End
+046 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # <lista_instrucciones> End
+047 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # <instruccion> <lista_instrucciones> End
+048 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # <asignacion> <lista_instrucciones> End
+049 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # <asignacion_aritmetica> <lista_instrucciones> End
+050 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+051 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = <operando> <operador> <operando> # <lista_instrucciones> End
+052 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = <identificador> <operador> <operando> # <lista_instrucciones> End
+053 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z <operador> <operando> # <lista_instrucciones> End
+054 | F -> - | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - <operando> # <lista_instrucciones> End
+055 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - <identificador> # <lista_instrucciones> End
+056 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # <lista_instrucciones> End
+057 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # <instruccion> <lista_instrucciones> End
+058 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # <asignacion> <lista_instrucciones> End
+059 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # <asignacion_aritmetica> <lista_instrucciones> End
+060 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+061 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = <operando> <operador> <operando> # <lista_instrucciones> End
+062 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = <identificador> <operador> <operando> # <lista_instrucciones> End
+063 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h <operador> <operando> # <lista_instrucciones> End
+064 | F -> * | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * <operando> # <lista_instrucciones> End
+065 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * <identificador> # <lista_instrucciones> End
+066 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # <lista_instrucciones> End
+067 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # <instruccion> <lista_instrucciones> End
+068 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # <asignacion> <lista_instrucciones> End
+069 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # <asignacion_aritmetica> <lista_instrucciones> End
+070 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+071 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = <operando> <operador> <operando> # <lista_instrucciones> End
+072 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = <identificador> <operador> <operando> # <lista_instrucciones> End
+073 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k <operador> <operando> # <lista_instrucciones> End
+074 | F -> / | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / <operando> # <lista_instrucciones> End
+075 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / <identificador> # <lista_instrucciones> End
+076 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # <lista_instrucciones> End
+077 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # <instruccion> <lista_instrucciones> End
+078 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # <asignacion> <lista_instrucciones> End
+079 | A -> R | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # <asignacion_aritmetica> <lista_instrucciones> End
+080 | R -> D=VFV# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # <identificador> = <operando> <operador> <operando> # <lista_instrucciones> End
+081 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = <operando> <operador> <operando> # <lista_instrucciones> End
+082 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = <identificador> <operador> <operando> # <lista_instrucciones> End
+083 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k <operador> <operando> # <lista_instrucciones> End
+084 | F -> % | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % <operando> # <lista_instrucciones> End
+085 | V -> N | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % <numero> # <lista_instrucciones> End
+086 | N -> n | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # <lista_instrucciones> End
+087 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # <instruccion> <lista_instrucciones> End
+088 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # <salida> <lista_instrucciones> End
+089 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida <identificador> # <lista_instrucciones> End
+090 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # <lista_instrucciones> End
+091 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # <instruccion> <lista_instrucciones> End
+092 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # <salida> <lista_instrucciones> End
+093 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida <identificador> # <lista_instrucciones> End
+094 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # <lista_instrucciones> End
+095 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # <instruccion> <lista_instrucciones> End
+096 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # <salida> <lista_instrucciones> End
+097 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida <identificador> # <lista_instrucciones> End
+098 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # <lista_instrucciones> End
+099 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # <instruccion> <lista_instrucciones> End
+100 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # <salida> <lista_instrucciones> End
+101 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida <identificador> # <lista_instrucciones> End
+102 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # <lista_instrucciones> End
+103 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # <instruccion> <lista_instrucciones> End
+104 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # <salida> <lista_instrucciones> End
+105 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida <identificador> # <lista_instrucciones> End
+106 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # <lista_instrucciones> End
+107 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # <instruccion> <lista_instrucciones> End
+108 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # <asignacion> <lista_instrucciones> End
+109 | A -> C | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # <asignacion_simple> <lista_instrucciones> End
+110 | C -> D=V# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # <identificador> = <operando> # <lista_instrucciones> End
+111 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = <operando> # <lista_instrucciones> End
+112 | V -> N | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = <numero> # <lista_instrucciones> End
+113 | N -> n | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # <lista_instrucciones> End
+114 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # <instruccion> <lista_instrucciones> End
+115 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # <asignacion> <lista_instrucciones> End
+116 | A -> C | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # <asignacion_simple> <lista_instrucciones> End
+117 | C -> D=V# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # <identificador> = <operando> # <lista_instrucciones> End
+118 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = <operando> # <lista_instrucciones> End
+119 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = <identificador> # <lista_instrucciones> End
+120 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # <lista_instrucciones> End
+121 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # <instruccion> <lista_instrucciones> End
+122 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # <asignacion> <lista_instrucciones> End
+123 | A -> C | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # <asignacion_simple> <lista_instrucciones> End
+124 | C -> D=V# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # <identificador> = <operando> # <lista_instrucciones> End
+125 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = <operando> # <lista_instrucciones> End
+126 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = <identificador> # <lista_instrucciones> End
+127 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # <lista_instrucciones> End
+128 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # <instruccion> <lista_instrucciones> End
+129 | I -> A | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # <asignacion> <lista_instrucciones> End
+130 | A -> C | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # <asignacion_simple> <lista_instrucciones> End
+131 | C -> D=V# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # <identificador> = <operando> # <lista_instrucciones> End
+132 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = <operando> # <lista_instrucciones> End
+133 | V -> D | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = <identificador> # <lista_instrucciones> End
+134 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # <lista_instrucciones> End
+135 | L -> IL | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # <instruccion> <lista_instrucciones> End
+136 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # <salida> <lista_instrucciones> End
+137 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida <identificador> # <lista_instrucciones> End
+138 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida x # <lista_instrucciones> End
+139 | L -> I | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida x # <instruccion> End
+140 | I -> O | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida x # <salida> End
+141 | O -> sD# | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida x # salida <identificador> # End
+142 | D -> i | Begin Programa operativo_01_02 x = 1.345 # y = 20 # z = x + y # z2 = x + y # h = z - x # h2 = z - x # k = h * y # t = k / z # m = k % 10 # salida z # salida h # salida k # salida t # salida m # temporal = 0 # temporal = x # x = y # y = temporal # salida x # salida y # End

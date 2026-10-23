@@ -83,6 +83,8 @@ Se comprueban **82 casos: 43 aceptados y 39 rechazados**. Incluyen los ocho caso
 
 El programa de referencia tiene **20 instrucciones: seis asignaciones simples, siete aritméticas y siete salidas**. No se cuenta por líneas: los conteos salen del árbol analizado.
 
+La [derivación completa del programa](evidencias/derivaciones/programa_referencia.txt) registra cada sustitución por la izquierda, sin omitir instrucciones. Su [árbol completo en JSON](evidencias/derivaciones/programa_referencia.json) conserva los tokens, los lexemas y sus posiciones en la fuente. La sección 2.2 del informe justifica además la lista no vacía, la separación de las dos asignaciones y las restricciones del encabezado, la salida y el terminador.
+
 Para probar otra fuente:
 
 ```bash
