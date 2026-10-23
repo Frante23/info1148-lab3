@@ -33,7 +33,9 @@ Las operaciones admitidas son `+`, `-`, `*`, `/` y `%`; cada asignación aritmé
 
 Los identificadores siguen `[A-Za-z][A-Za-z0-9_]*`; los números, `[0-9]+(?:\.[0-9]+)?`. Se acepta `0`, como en el ejemplo de la pauta. Las palabras reservadas se distinguen por mayúsculas y se reconocen antes de clasificar un lexema como `ID`. Los comentarios `/* ... */` no anidados y los espacios se descartan sin unir palabras adyacentes.
 
-La extensión admite:
+El informe justifica la ausencia de ambigüedad sobre tokens: `#` fija los límites de cada instrucción, su primer token distingue salida, asignación y declaración, y el contenido después del primer operando distingue asignación simple de aritmética. Cada operando, operador y tipo tiene una alternativa determinada por su token. Esta justificación estructural cubre ambas gramáticas; la coincidencia de las pruebas por sí sola no se usa como prueba general de unicidad.
+
+La sintaxis de las declaraciones es:
 
 ```text
 entero contador #

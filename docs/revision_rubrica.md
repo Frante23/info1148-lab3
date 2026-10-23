@@ -17,6 +17,7 @@ La comprobación de abajo indica dónde se desarrolla cada exigencia. No es una 
 | Conclusiones concretas | 4 | Hallazgos sobre orden, terminadores, contexto de análisis y límite entre sintaxis y semántica |
 | Informe PDF y enlace a archivos de JFLAP | 5 y anexos | PDF final; cuatro JFF; repositorio público |
 | Consistencia de notación y evidencia legible | Todo el documento | Tabla de equivalencias, adaptador S→I documentado, comprobación de XML y árboles |
+| Ausencia de ambigüedad en la GLC propuesta | 2.2, unicidad del árbol | Justificación por separación con #, selección de clase de instrucción y alternativas disjuntas de operandos, operadores y tipos |
 
 ## Decisiones que deben conservarse
 

@@ -174,6 +174,11 @@ No añadimos cadenas de operaciones ni paréntesis: \cod{x = y + z * t \#} queda
 
 \textbf{Toda estructura del alcance tiene una construcción y toda derivación respeta ese alcance.} Para construir un programa se toma P1, se genera su nombre con P10, se elige la longitud de la lista con P2 y se deriva cada instrucción mediante P3 a P11. Recíprocamente, una derivación terminal desde $S$ debe usar ese encabezado y ese cierre, una lista no vacía y únicamente las tres formas de instrucción descritas. Esta correspondencia explica por qué las reglas cubren el lenguaje definido; las pruebas comprueban después ejemplos concretos y errores de sus límites.
 
+\subtitulo{Por qué no hay dos árboles para una misma entrada tokenizada}
+Una gramática es ambigua si alguna cadena terminal admite dos árboles de derivación distintos. En la base propuesta, cada instrucción contiene exactamente un \cod{\#} al final; ningún operando puede generar ese símbolo. Por tanto, los terminadores fijan una única separación de la lista. Su última instrucción obliga a usar $L\to I$ y cada una anterior, $L\to IL$: no hay otra agrupación posible.
+
+Dentro de cada instrucción, \cod{salida} selecciona $O$ y un \cod{ID} inicial selecciona $A$. En la asignación, después del primer operando aparece \cod{\#} para $C$, o un operador y un segundo operando para $R$; sus formas terminales son distintas. Cada operando selecciona únicamente $D$ o $N$ según sea \cod{ID} o \cod{NUM}; cada operador selecciona una sola alternativa de $F$. P1 fija también el encabezado y el cierre. Estas decisiones determinan un único árbol. En la extensión, \cod{entero} y \cod{real} son tokens reservados distintos de \cod{ID} y \cod{salida}; seleccionan solo $J$ y fijan la alternativa de $T$. Así, la extensión conserva la unicidad. Este razonamiento se refiere a la gramática sobre tokens; las reglas léxicas anteriores fijan cómo se obtiene esa entrada.
+
 \newpage
 \subtitulo{c) Verificación del programa completo de referencia}
 La gramática representa el programa completo. Su encabezado aplica P1: \cod{operativo\_01\_02} es \cod{ID}; el comentario se omite antes del análisis sintáctico. Para sus 20 instrucciones se usa $L\to IL$ diecinueve veces y luego $L\to I$. Cada $I$ toma la alternativa indicada:
